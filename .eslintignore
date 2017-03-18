@@ -1,7 +1,2 @@
-/bin/
-/static/
 /node_modules/
 /config/
-/src/client/
-/src/server/
-/src/redux/
