@@ -1,0 +1,7 @@
+/bin/
+/static/
+/node_modules/
+/webpack/
+/src/client/
+/src/server/
+/src/redux/
