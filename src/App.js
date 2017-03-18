@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import { postDatabase } from './api/apiDatabase';
+import Sidebar from './components/Sidebar';
 
 class App extends Component {
 
@@ -32,6 +33,7 @@ class App extends Component {
         <p className={styles.AppIntro}>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <Sidebar />
         <button onClick={this.handleUserSubmit}>Add user</button>
       </div>
     );
