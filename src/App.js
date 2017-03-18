@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import Home from './pages/Home';
 
-import { postDatabase } from './api/apiDatabase';
+import AdminLoginLink from './components/AdminLoginLink';
+import Home from './pages/Home';
+import Sidebar from './components/Sidebar';
+
+import { postDatabase, apiAuth } from './api/apiDatabase';
 
 class App extends Component {
 
@@ -22,12 +25,19 @@ class App extends Component {
     postDatabase({ jsonObject: newUser, refName }).then(onFulfilled).catch(onRejected);
   }
 
+  handleAdminClick(event) {
+    event.preventDefault();
+    apiAuth();
+  }
+
   render() {
     const styles = require('./App.css');
     return (
       <div className={styles.App}>
         <Home />
+        <Sidebar />
         <button onClick={this.handleUserSubmit}>Add user</button>
+        <AdminLoginLink adminClick={this.handleAdminClick.bind(this)} />
       </div>
     );
   }
