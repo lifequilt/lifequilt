@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+
+import Sidebar from './components/Sidebar';
+
 import { postDatabase, apiAuth } from './api/apiDatabase';
 import AdminLoginLink from './components/AdminLoginLink';
 
@@ -40,6 +43,7 @@ class App extends Component {
         <p className={styles.AppIntro}>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <Sidebar />
         <button onClick={this.handleUserSubmit}>Add user</button>
         <AdminLoginLink adminClick={this.handleAdminClick.bind(this)} />
       </div>
