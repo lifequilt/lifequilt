@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 
+import AdminLoginLink from './components/AdminLoginLink';
+import Home from './pages/Home';
 import Sidebar from './components/Sidebar';
 
 import { postDatabase, apiAuth } from './api/apiDatabase';
@@ -36,6 +37,7 @@ class App extends Component {
     const styles = require('./App.css');
     return (
       <div className={styles.App}>
+        <Home />
         <div className={styles.AppHeader}>
           <img src={logo} className={styles.AppLogo} alt="logo" />
           <h2>Welcome to React</h2>
