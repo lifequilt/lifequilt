@@ -37,6 +37,9 @@ module.exports = {
       "always"
     ],
     /* Advanced Rules*/
+    "import/no-named-default": "off",
+    "react/jsx-tag-spacing": "off",
+    "react/no-array-index-key": "off",
     "no-unused-expressions": ["warn", { "allowTernary": true }],
     "no-useless-concat": "warn",
     "block-scoped-var": "error",

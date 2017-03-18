@@ -18,8 +18,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
 - [Displaying Lint Output in the Editor](#displaying-lint-output-in-the-editor)
 - [Debugging in the Editor](#debugging-in-the-editor)
 - [Changing the Page `<title>`](#changing-the-page-title)
-- [Installing a Dependency](#installing-a-dependency)
-- [Importing a Component](#importing-a-component)
+- [Installing a Dependency](#installing-a-dependency) [Importing a Component](#importing-a-component)
 - [Adding a Stylesheet](#adding-a-stylesheet)
 - [Post-Processing CSS](#post-processing-css)
 - [Adding a CSS Preprocessor (Sass, Less etc.)](#adding-a-css-preprocessor-sass-less-etc)
@@ -412,6 +411,17 @@ becomes this:
 ```
 
 If you need to disable autoprefixing for some reason, [follow this section](https://github.com/postcss/autoprefixer#disabling).
+
+Css custom properties (variables should be named with preceding --, like --red-01) can be defined in config/variables.js. To use them, set the css prop to the var like `background-color: $--red-01;`
+
+To use styles, require the css file within the render method of the component. You now have an object with classnames as properties. Pass the style object property as the classname of your html, like so:
+
+```
+render() {
+  const styles = require('./Component.css');
+  return <div className={styles.ComponentStyle}> Stuff </div>};
+}
+```
 
 ## Adding a CSS Preprocessor (Sass, Less etc.)
 
