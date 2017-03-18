@@ -8,6 +8,6 @@ const config = {
   messagingSenderId: '151611394438',
 };
 
-const api = firebase.initiliazeApp(config);
+const api = firebase.initializeApp(config);
 
 export default api;
