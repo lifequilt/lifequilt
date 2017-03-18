@@ -5,6 +5,9 @@ import Home from './pages/Home';
 import Sidebar from './components/Sidebar';
 
 import { postDatabase, apiAuth } from './api/apiDatabase';
+import AdminLoginLink from './components/AdminLoginLink';
+
+import { UserForm } from './forms/user-form';
 
 class App extends Component {
 
@@ -35,6 +38,14 @@ class App extends Component {
     return (
       <div className={styles.App}>
         <Home />
+        <div className={styles.AppHeader}>
+          <img src={logo} className={styles.AppLogo} alt="logo" />
+          <h2>Welcome to React</h2>
+        </div>
+        <UserForm />
+        <p className={styles.AppIntro}>
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
         <Sidebar />
         <button onClick={this.handleUserSubmit}>Add user</button>
         <AdminLoginLink adminClick={this.handleAdminClick.bind(this)} />
