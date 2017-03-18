@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import { postDatabase } from './api/apiDatabase';
+import { postDatabase, apiAuth } from './api/apiDatabase';
+import AdminLoginLink from './components/AdminLoginLink';
 
 class App extends Component {
 
@@ -21,6 +22,11 @@ class App extends Component {
     postDatabase({ jsonObject: newUser, refName }).then(onFulfilled).catch(onRejected);
   }
 
+  handleAdminClick(event) {
+    event.preventDefault();
+    apiAuth();
+  }
+
   render() {
     const styles = require('./App.css');
     return (
@@ -33,6 +39,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <button onClick={this.handleUserSubmit}>Add user</button>
+        <AdminLoginLink adminClick={this.handleAdminClick.bind(this)} />
       </div>
     );
   }
