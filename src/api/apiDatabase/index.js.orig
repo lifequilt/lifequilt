@@ -1,10 +1,17 @@
 import postDatabase from './postDatabase';
 import apiDatabase from './apiDatabase';
+<<<<<<< HEAD
+=======
 import apiAuth from './apiAuth';
+>>>>>>> develop
 
 export {
   apiDatabase,
   postDatabase,
-  apiAuth,
+<<<<<<< HEAD
 };
 
+=======
+  apiAuth,
+};
+>>>>>>> develop
