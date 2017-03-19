@@ -43,7 +43,15 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
   // Making sure that the publicPath goes back to to build folder.
   ? { publicPath: Array(cssFilename.split('/').length).join('../') }
   : undefined;
-console.log(extractTextPluginOptions);
+
+var cssLoaderQuery = {
+  modules : true,
+  sourceMap: true,
+  importLoaders: 2,
+};
+
+var cssLoaderQueryString = '?' + JSON.stringify(cssLoaderQuery);
+
 
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
@@ -145,7 +153,10 @@ module.exports = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
           'style-loader',
-          'css-loader?importLoaders=!postcss-loader'
+          [
+          'css-loader' + cssLoaderQueryString,
+          'postcss-loader'
+          ]
         )
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
