@@ -11,21 +11,6 @@
   background-size: contain;
   margin-left: 40px;
 }
-/*
-.HeaderList {
-  display: flex;
-  align-items: center;
-}
-
-.HeaderListItem {
-  flex: 1;
-  padding: 5px;
-  margin: 10px;
-  color: #f48f0d;
-  text-decoration: none;
-  min-width: 15px;
-  text-transform: uppercase;
-}*/
 
 @media screen and (max-width: 1000px) {
   .header img {
