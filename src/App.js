@@ -10,6 +10,7 @@ import Blog from './pages/Blog';
 import Donate from './pages/Donate';
 import Home from './pages/Home';
 import Participate from './pages/Participate';
+import About from './pages/About';
 import Contact from './pages/Participate/Contact';
 import Partner from './pages/Participate/Partner';
 import Volunteer from './pages/Participate/Volunteer';
@@ -35,9 +36,10 @@ export class App extends Component {
             <Route exact path="/participate/partner" component={Partner} />
             <Route exact path="/participate/volunteer" component={Volunteer} />
             <Route exact path="/participate/contact" component={Contact} />
-            <Route path="/thankyou" component={ThankYou} />
-            <Route path="/donate" component={Donate} />
+            <Route path="/about" component={About} />
             <Route path="/blog" component={Blog} />
+            <Route path="/donate" component={Donate} />
+            <Route path="/thankyou" component={ThankYou} />
             <Footer />
           </div>
         </Router>
