@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import SingleInput from './single-input';
 import { postDatabase } from '../api/apiDatabase';
 
@@ -38,8 +38,9 @@ export class UserForm extends Component {
     };
     const onRejected = error => console.log('Errors: ', error);
 
+    const userObject = Object.assign(this.state, {'userType': this.props.userType});
 
-    postDatabase({ jsonObject: this.state, refName })
+    postDatabase({ jsonObject: userObject, refName })
       .then(onFulfilled)
       .catch(onRejected);
   }
@@ -62,5 +63,9 @@ export class UserForm extends Component {
     );
   }
 }
+
+UserForm.propTypes = {
+  userType: PropTypes.string.isRequired,
+};
 
 export default UserForm;

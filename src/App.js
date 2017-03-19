@@ -10,6 +10,8 @@ import Blog from './pages/Blog';
 import DonatePage from './pages/DonatePage';
 import Home from './pages/Home';
 import Participate from './pages/Participate';
+import Partner from './pages/Participate/Partner';
+import Volunteer from './pages/Participate/Volunteer';
 
 // Components
 import Header from './components/Header';
@@ -22,9 +24,11 @@ const App = () => (
       <div>
         <Header />
         <Route exact path="/" component={Home} />
-        <Route path="/participate" component={Participate} />
+        <Route exact path="/participate" component={Participate} />
         <Route path="/donate" component={DonatePage} />
         <Route path="/blog" component={Blog} />
+        <Route path="/participate/partner" component={Partner} />
+        <Route path="/participate/volunteer" component={Volunteer} />
       </div>
     </Router>
   </div>
