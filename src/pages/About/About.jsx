@@ -6,14 +6,14 @@ const backpackImage = require('../../assets/backpack-pic.jpg');
 const About = () => (
   <div className={styles.container}>
     <div className={styles.content}>
-      <h2>About</h2>
+      <h2 className={styles.header}>About</h2>
       <p> The Universal Declaration of Human Rights makes clear that every child has
         the right to a free basic education, so poverty and lack of resources
         should not be a barrier to schooling.
         Life Quilt Foundation was founded on September 11, 2010 by a group of
         family and friends wanting to ensure that right.
       </p>
-      <h3>Why Life Quilt Foundation is Needed</h3>
+      <h3 className={styles.header}>Why Life Quilt Foundation is Needed</h3>
       <p>
         A 2015 study by Communities in Schools, an education advocacy group,
         outlined 10 surprising reasons why children don’t go to school.
@@ -45,9 +45,9 @@ const About = () => (
         Life Quilt, in partnership with community resources works to help parents
         strengthen their roles as their child’s first teacher.
       </p>
-    </div>
-    <div className={styles.image}>
-      <img src={backpackImage} alt="kids with backpacks"/>
+      <div className={styles.image}>
+        <img src={backpackImage} alt="kids with backpacks"/>
+      </div>
     </div>
   </div>
 );

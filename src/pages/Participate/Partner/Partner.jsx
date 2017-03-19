@@ -12,7 +12,7 @@ export class Partner extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.form}>
-          <h2>Partner</h2>
+          <h2 className={styles.header}>Partner</h2>
           <UserForm
             userType="partner"
             history={this.props.history}
