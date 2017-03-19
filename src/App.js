@@ -7,7 +7,7 @@ import createBrowserHistory from 'history/createBrowserHistory';
 
 // Pages
 import Blog from './pages/Blog';
-import DonatePage from './pages/DonatePage';
+import Donate from './pages/Donate';
 import Home from './pages/Home';
 import Participate from './pages/Participate';
 import Partner from './pages/Participate/Partner';
@@ -33,7 +33,7 @@ export class App extends Component {
             <Route exact path="/participate/partner" component={Partner} />
             <Route exact path="/participate/volunteer" component={Volunteer} />
             <Route path="/thankyou" component={ThankYou} />
-            <Route path="/donate" component={DonatePage} />
+            <Route path="/donate" component={Donate} />
             <Route path="/blog" component={Blog} />
           </div>
         </Router>
