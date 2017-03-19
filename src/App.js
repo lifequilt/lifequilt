@@ -10,6 +10,7 @@ import Blog from './pages/Blog';
 import DonatePage from './pages/DonatePage';
 import Home from './pages/Home';
 import Participate from './pages/Participate';
+import About from './pages/About';
 
 // Components
 import Header from './components/Header';
@@ -25,6 +26,7 @@ const App = () => (
         <Route path="/participate" component={Participate} />
         <Route path="/donate" component={DonatePage} />
         <Route path="/blog" component={Blog} />
+        <Route path="/about" component={About} />
       </div>
     </Router>
   </div>
