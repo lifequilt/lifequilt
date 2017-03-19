@@ -6,10 +6,16 @@
   background-color: $blueMedium;
   color: white;
   margin-top: 10px;
+  text-decoration: none;
 }
 
 .banner h3 {
   flex: 1;
   text-align: center;
   align-self: center;
+  font-size: 30px;
+}
+
+a {
+  text-decoration: none;
 }
