@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -9,29 +9,25 @@ import {
 import Blog from './pages/Blog';
 import Donate from './pages/Donate';
 import Home from './pages/Home';
-import Volunteer from './pages/Volunteer';
+import Participate from './pages/Participate';
 
 // Components
 import Header from './components/Header';
 
-class App extends Component {
-  render() {
-    const styles = require('./App.css');
-    return (
-      <div className={styles.App}>
-        <Router history={hashHistory}>
-          <div>
-            <Header />
-            <Route exact path="/" component={Home} />
-            <Route path="/volunteer" component={Volunteer} />
-            <Route path="/donate" component={Donate} />
-            <Route path="/blog" component={Blog} />
-          </div>
-        </Router>
-      </div>
-    );
-  }
-}
+const styles = require('./App.css');
 
+const App = () => (
+  <div className={styles.App}>
+    <Router history={hashHistory}>
+      <div>
+        <Header />
+        <Route exact path="/" component={Home} />
+        <Route path="/participate" component={Participate} />
+        <Route path="/donate" component={Donate} />
+        <Route path="/blog" component={Blog} />
+      </div>
+    </Router>
+  </div>
+);
 
 export default App;

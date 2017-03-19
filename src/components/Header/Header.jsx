@@ -13,7 +13,7 @@ const Header = () => (
     <Logo path={logo} altText={'Logo Image'} />
     <ul className={styles.HeaderList}>
       <li><Link to="/" className={styles.HeaderListItem}>Home</Link></li>
-      <li><Link to="/volunteer" className={styles.HeaderListItem}>Get Involved</Link></li>
+      <li><Link to="/participate" className={styles.HeaderListItem}>Get Involved</Link></li>
       <li><Link to="/donate" className={styles.HeaderListItem}>Donate</Link></li>
       <li><Link to="/blog" className={styles.HeaderListItem}>Blog</Link></li>
     </ul>
