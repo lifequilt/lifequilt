@@ -5,23 +5,29 @@ import {
   Link,
 } from 'react-router-dom';
 
+import Home from '../pages/Home/index';
+
 // Each logical "route" has two components, one for
 // the sidebar and one for the main area. We want to
 // render both of them in different places when the
 // path matches the current URL.
 const routes = [
-  { path: '/',
+  {
+    path: '/',
     exact: true,
-    sidebar: () => <div>home!</div>,
-    main: () => <h2>Home</h2>,
+    main: () => <Home />,
   },
-  { path: '/bubblegum',
-    sidebar: () => <div>bubblegum!</div>,
-    main: () => <h2>Bubblegum</h2>,
+  {
+    path: '/volunteer',
+    main: () => <h2>Get Involved</h2>,
   },
-  { path: '/shoelaces',
-    sidebar: () => <div>shoelaces!</div>,
-    main: () => <h2>Shoelaces</h2>,
+  {
+    path: '/donate',
+    main: () => <h2>Donate</h2>,
+  },
+  {
+    path: '/contact',
+    main: () => <h2>Contact</h2>,
   },
 ];
 
@@ -31,14 +37,15 @@ const SidebarExample = () => (
       <div
         style={{
           padding: '10px',
-          width: '40%',
+          width: '15%',
           background: '#f0f0f0',
         }}
       >
         <ul style={{ listStyleType: 'none', padding: 0 }}>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/bubblegum">Bubblegum</Link></li>
-          <li><Link to="/shoelaces">Shoelaces</Link></li>
+          <li><Link to="/volunteer">Get Involved</Link></li>
+          <li><Link to="/donate">Donate</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
         </ul>
 
         {routes.map((route, index) => (

@@ -1,54 +1,37 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  hashHistory,
+} from 'react-router-dom';
 
-import AdminLoginLink from './components/AdminLoginLink';
+// Pages
+import Blog from './pages/Blog';
+import Donate from './pages/Donate';
 import Home from './pages/Home';
-import Sidebar from './components/Sidebar';
+import Volunteer from './pages/Volunteer';
 
-import { postDatabase, apiAuth } from './api/apiDatabase';
-import { UserForm } from './forms/user-form';
+// Components
+import Header from './components/Header';
 
 class App extends Component {
-
-  handleUserSubmit = () => {
-    const newUser = {
-      firstName: 'Bo',
-      lastName: 'Johnson',
-      phone: '513-680-8002',
-    };
-
-    const refName = '/users';
-    const onFulfilled = snapshot => {
-      console.log(snapshot.key);
-      return snapshot.key;
-    };
-    const onRejected = error => console.log('database push failed', error);
-
-    postDatabase({ jsonObject: newUser, refName }).then(onFulfilled).catch(onRejected);
-  }
-
-  handleAdminClick(event) {
-    event.preventDefault();
-    apiAuth();
-  }
-
   render() {
     const styles = require('./App.css');
     return (
       <div className={styles.App}>
-        <Home />
-        <div className={styles.AppHeader}>
-          <h2>Welcome to React</h2>
-        </div>
-        <UserForm />
-        <p className={styles.AppIntro}>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Sidebar />
-        <button onClick={this.handleUserSubmit}>Add user</button>
-        <AdminLoginLink adminClick={this.handleAdminClick.bind(this)} />
+        <Router history={hashHistory}>
+          <div>
+            <Header />
+            <Route exact path="/" component={Home} />
+            <Route path="/volunteer" component={Volunteer} />
+            <Route path="/donate" component={Donate} />
+            <Route path="/blog" component={Blog} />
+          </div>
+        </Router>
       </div>
     );
   }
 }
+
 
 export default App;
