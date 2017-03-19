@@ -19,9 +19,4 @@ class AdminLoginLink extends Component {
   }
 }
 
-// const AdminLoginLink = ({ adminClick }) => (
-//
-//   <button href="" onClick={this.adminClick} className={styles.adminButton}>Admin</button>
-// );
-
 export default AdminLoginLink;
