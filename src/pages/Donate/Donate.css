@@ -1,6 +1,4 @@
 .DonatePage {
-  height: 100vh;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,6 +7,7 @@
 }
 
 .supportContainer {
+  border-radius: 4px;
   margin-top: 32px;
   padding: 16px;
   font-size: 24px;
@@ -22,4 +21,13 @@
   width: 90vw;
   display: flex;
   justify-content: space-around;
+}
+
+.amazonSmile {
+  width: 100px;
+  height: 100px;
+}
+
+.donateBanner {
+  width: 100%;
 }
