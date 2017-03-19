@@ -13,6 +13,7 @@
   padding: 0 19px;	
   margin: 20px;
   background: white;
+  min-width: 400px;
 }
 
 .image {
@@ -20,8 +21,8 @@
   text-align: center;
 }
 
-.content img{
-	max-width: 800px;
+.content img {
+	max-width: 80%;
 }
 
 .header {
