@@ -7,13 +7,14 @@ const logo = require('../../assets/logo.png');
 const styles = require('./Footer.css');
 
 const Footer = () => (
-  <footer className={styles.footer} >
+  <footer className={styles.footer}>
     <Logo clasName={styles.footerLogo} path={logo} />
     <Nav className={styles.footerNav} />
-    <section>
+    <section className={styles.contactInfo}>
       <p>administrator@lifequilt.org</p>
       <p>(708) 824-8336</p>
-      <p>1335 S Prairie Avenue Chicago, IL 60605</p>
+      <p>1335 S Prairie Avenue</p>
+      <p>Chicago, IL  60605</p>
     </section>
   </footer>
 );

@@ -3,8 +3,9 @@
   flex: 1;
   height: 120px;
   width: 100%;
-  background-color: #1D3B74;
+  background-color: #0067A3;
   color: white;
+  margin-top: 10px;
 }
 
 .banner h3 {
@@ -12,3 +13,4 @@
   text-align: center;
   align-self: center;
 }
+

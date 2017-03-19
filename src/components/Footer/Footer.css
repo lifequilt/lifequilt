@@ -14,3 +14,11 @@
   height: 40px;
   align-self: center;
 }
+
+.contactInfo {
+  background-color: white;
+}
+
+.contactInfo p {
+  margin: 5px;
+}

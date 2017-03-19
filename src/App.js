@@ -13,6 +13,7 @@ import Participate from './pages/Participate';
 
 // Components
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 const styles = require('./App.css');
 
@@ -25,6 +26,7 @@ const App = () => (
         <Route path="/participate" component={Participate} />
         <Route path="/donate" component={Donate} />
         <Route path="/blog" component={Blog} />
+        <Footer />
       </div>
     </Router>
   </div>
