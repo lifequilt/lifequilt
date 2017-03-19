@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const ThankYou = props => (
-  <div>
-    <h2>Thank you for signing up to {props.location.state.userType} with us!</h2>
-    <p>We will get back to you shortly!</p>
-  </div>
-);
+export class ThankYou extends Component {
+  render() {
+    const { userType } = this.props.location.state;
+    return (
+      <div>
+        {userType === 'contact' ?
+          <div>Thank you for your interest! We will get back to you shortly!</div> :
+          <div>
+            <h2>Thank you for signing up to {userType} with us!</h2>
+            <p>We will get back to you shortly!</p>
+          </div>
+        }
+      </div>
+    );
+  }
+}
 
 export default ThankYou;
