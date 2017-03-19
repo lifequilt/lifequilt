@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Banner from '../../components/Banner';
 import Section from '../../components/Section';
@@ -32,8 +33,8 @@ const Home = () => (
         </p>
       </Section>
     </div>
-    <Banner>
-      <h3>Help us out! Donate!</h3>
+    <Banner className={styles.Banner}>
+      <Link to="/donate" className={styles.donateLink}>Donate!</Link>
     </Banner>
   </div>
 );
