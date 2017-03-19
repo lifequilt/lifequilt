@@ -50,6 +50,7 @@ export class DonateForm extends Component {
     this.onChangeCustomDonate = this.onChangeCustomDonate.bind(this);
     this.onChangeDonate = this.onChangeDonate.bind(this);
   }
+
   onChange(key, event) {
     const newState = {};
     newState[key] = event.target.value;
@@ -66,17 +67,13 @@ export class DonateForm extends Component {
   }
 
   onChangeDonate(key, event) {
-    const newState = {
-      customDonateAmount: '',
-    };
+    const newState = { customDonateAmount: '' };
     newState[key] = event.target.value;
     this.setState(newState);
   }
 
 
-  handleSubmit(e) {
-    e.preventDefault();
-
+  handleSubmit() {
     const refName = '/users';
     const onFulfilled = snapshot => {
       console.log(snapshot.key);
@@ -90,11 +87,8 @@ export class DonateForm extends Component {
     } = this.state;
     const newDonateAmount = donateAmount === '' ? customDonateAmount : donateAmount;
 
-    const jsonObject = {
-      ...this.state,
-      donateAmount: newDonateAmount,
+    const jsonObject = { ...this.state, donateAmount: newDonateAmount,
     };
-
 
     postDatabase({ jsonObject, refName })
       .then(onFulfilled)
@@ -105,7 +99,10 @@ export class DonateForm extends Component {
 
     return (
       <div className={styles.formContainer}>
-        <form className={styles.DonateForm} onSubmit={this.handleSubmit}>
+        <form className={styles.DonateForm} onSubmit={this.handleSubmit} method="POST" action="https://www.paypal.com/cgi-bin/webscr" target="_top">
+          <input type="hidden" name="cmd" value="_donations" />
+          <input type="hidden" name="business" value="25P939GKLLXB4" />
+
           <div className={styles.donateTiers}>
             {DONATE_LEVELS_ARRAY.map((field, id) =>
               <AmountInput
@@ -134,6 +131,21 @@ export class DonateForm extends Component {
               title={field.title}
             />
           )}
+          <input type="hidden" name="amount" value="100" />
+          <input type="hidden" name="currency_code" value="USD" />
+          <input type="hidden" name="address_override" value="1" />
+          <input type="hidden" name="first_name" value={this.state.firstName} />
+          <input type="hidden" name="last_name" value={this.state.lastName} />
+          <input type="hidden" name="address1" value={this.state.address1} />
+          <input type="hidden" name="address2" value={this.state.address2} />
+          <input type="hidden" name="city" value={this.state.city} />
+          <input type="hidden" name="email" value={this.state.email} />
+          <input type="hidden" name="night_phone_a" value={this.state.phoneNumber.substring(1, 3)} />
+          <input type="hidden" name="night_phone_b" value={this.state.phoneNumber.substring(3, 6)} />
+          <input type="hidden" name="night_phone_c" value={this.state.phoneNumber.substring(6, 10)} />
+          <input type="hidden" name="state" value={this.state.state} />
+          <input type="hidden" name="zip" value={this.state.zip} />
+          <input type="hidden" name="country" value="US" />
           <input type="submit" value="Submit" />
         </form>
       </div>
