@@ -1,7 +1,9 @@
 import React from 'react';
 
+const styles = require('./About.css');
+
 const About = () => (
-  <div>
+  <div className={styles.container}>
     <h2>About</h2>
     <p> The Universal Declaration of Human Rights makes clear that every child has
       the right to a free basic education, so poverty and lack of resources
@@ -9,7 +11,7 @@ const About = () => (
       Life Quilt Foundation was founded on September 11, 2010 by a group of
       family and friends wanting to ensure that right.
     </p>
-    <h2>Why Life Quilt Foundation is Needed</h2>
+    <h3>Why Life Quilt Foundation is Needed</h3>
     <p>
       A 2015 study by Communities in Schools, an education advocacy group,
       outlined 10 surprising reasons why children don’t go to school.
