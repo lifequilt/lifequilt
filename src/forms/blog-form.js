@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import React, { Component } from 'react';
 import SingleInput from './single-input';
 import SingleTextarea from './single-textarea';
@@ -25,14 +23,12 @@ export class BlogForm extends Component {
     newState[key] = event.target.value;
     newState['createdAt'] = (new Date()).toString()
     this.setState(newState);
-    console.log(this.state)
   }
   handleSubmit(e) {
     e.preventDefault();
 
     const refName = '/blogs';
     const onFulfilled = snapshot => {
-      console.log(snapshot.key);
       return snapshot.key;
     };
     const onRejected = error => console.log('Errors: ', error);
