@@ -1,0 +1,13 @@
+.containerForm {
+   /* This will be twice as big as the small item. */
+    -webkit-box-flex: 2;
+    -ms-flex: 2 0 0px;
+    flex: 2 0 0;
+    text-align: left;
+    padding: 50px 50px;
+}
+
+.sidebar {
+   -webkit-flex: 1 0 0;
+   flex: 1 0 0;
+}

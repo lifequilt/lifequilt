@@ -17,7 +17,7 @@ export class Partner extends Component {
 }
 =======
 import React from 'react';
-import { UserForm } from '../../../forms/user-form';
+import { UserForm } from '../../../forms/user/user-form';
 
 const Partner = () => (
   <div>
