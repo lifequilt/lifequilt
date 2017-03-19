@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 import React, { Component } from 'react';
-import { UserForm } from '../../../forms/user-form';
+import { UserForm } from '../../../forms/user/user-form';
 
 export class Partner extends Component {
   render() {
@@ -15,16 +14,5 @@ export class Partner extends Component {
     );
   }
 }
-=======
-import React from 'react';
-import { UserForm } from '../../../forms/user/user-form';
-
-const Partner = () => (
-  <div>
-    <h2>Partner</h2>
-    <UserForm userType="partner" />
-  </div>
-);
->>>>>>> forms and passing userTypes
 
 export default Partner;
