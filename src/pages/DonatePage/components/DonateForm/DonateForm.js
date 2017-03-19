@@ -48,13 +48,22 @@ export class DonateForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onChangeCustomDonate = this.onChangeCustomDonate.bind(this);
+    this.onSelectCustomDonate = this.onSelectCustomDonate.bind(this);
     this.onChangeDonate = this.onChangeDonate.bind(this);
   }
 
   onChange(key, event) {
     const newState = {};
     newState[key] = event.target.value;
-    console.log(this.state);
+    this.setState(newState);
+  }
+
+  onSelectCustomDonate() {
+    const newState = {
+      donateAmount: '',
+      customDonateAmount: 0,
+    };
+
     this.setState(newState);
   }
 
@@ -114,7 +123,7 @@ export class DonateForm extends Component {
                 checked={this.state.donateAmount === field.amount && this.state.customDonateAmount === ''}
               />
             )}
-            <input type="radio" checked={this.state.customDonateAmount !== '' && this.state.donateAmount === ''} />
+            <input type="radio" onChange={this.onSelectCustomDonate} checked={this.state.customDonateAmount !== '' && this.state.donateAmount === ''} />
             <input
               type="text"
               value={this.state.customDonateAmount}
