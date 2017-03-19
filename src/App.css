@@ -24,3 +24,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}

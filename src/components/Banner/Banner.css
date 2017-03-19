@@ -3,7 +3,7 @@
   flex: 1;
   height: 120px;
   width: 100%;
-  background-color: #0067A3;
+  background-color: $blueMedium;
   color: white;
   margin-top: 10px;
 }
@@ -13,4 +13,3 @@
   text-align: center;
   align-self: center;
 }
-

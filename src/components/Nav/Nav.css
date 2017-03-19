@@ -18,4 +18,5 @@
   margin: 10px;
   color: $orangeDark;
   font-weight: 700;
+  text-decoration: underline;
 }
