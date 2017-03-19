@@ -15,6 +15,7 @@ import Contact from './pages/Participate/Contact';
 import Partner from './pages/Participate/Partner';
 import Volunteer from './pages/Participate/Volunteer';
 import ThankYou from './pages/ThankYou';
+import AdminLoginLink from './pages/Admin/AdminLoginLink';
 
 // Components
 import Header from './components/Header';
@@ -40,6 +41,7 @@ export class App extends Component {
             <Route path="/blog" component={Blog} />
             <Route path="/donate" component={Donate} />
             <Route path="/thankyou" component={ThankYou} />
+            <Route path="/admin" component={AdminLoginLink} />
             <Footer />
           </div>
         </Router>
