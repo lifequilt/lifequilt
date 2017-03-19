@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar';
 
 import { postDatabase, apiAuth } from './api/apiDatabase';
 import { UserForm } from './forms/user-form';
+import { BlogForm } from './forms/blog-form';
 
 class App extends Component {
 
@@ -40,6 +41,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <UserForm />
+        <BlogForm />
         <p className={styles.AppIntro}>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
