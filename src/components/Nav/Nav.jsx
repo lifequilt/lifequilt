@@ -1,14 +1,14 @@
 import React from 'react';
-
-import NavItem from './components/NavItem';
+import { Link } from 'react-router-dom';
 
 const styles = require('./Nav.css');
 
 const Nav = () => (
-  <nav className={styles.nav} >
-    <NavItem title={'About'} />
-    <NavItem title={'Get Involved'} />
-    <NavItem title={'Donate'} />
+  <nav className={styles.nav}>
+    <Link to="/" className={styles.navItem}>Home</Link>
+    <Link to="/participate" className={styles.navItem}>Get Involved</Link>
+    <Link to="/donate" className={styles.navItem}>Donate</Link>
+    <Link to="/blog" className={styles.navItem}>Blog</Link>
   </nav>
 );
 
