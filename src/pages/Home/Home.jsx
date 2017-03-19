@@ -33,7 +33,7 @@ const Home = () => (
       </Section>
     </div>
     <Banner>
-      <h3>Help us out! Donate!</h3>
+      <h3>I WANT TO HELP</h3>
     </Banner>
   </div>
 );

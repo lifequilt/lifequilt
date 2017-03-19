@@ -3,6 +3,7 @@ import React from 'react';
 import Logo from '../Logo';
 import Nav from '../Nav';
 
+const facebookButton = require('../../assets/facebook.jpeg');
 const logo = require('../../assets/logo.png');
 const styles = require('./Footer.css');
 
@@ -10,12 +11,7 @@ const Footer = () => (
   <footer className={styles.footer}>
     <Logo clasName={styles.footerLogo} path={logo} />
     <Nav className={styles.footerNav} />
-    <section className={styles.contactInfo}>
-      <p>administrator@lifequilt.org</p>
-      <p>(708) 824-8336</p>
-      <p>1335 S Prairie Avenue</p>
-      <p>Chicago, IL  60605</p>
-    </section>
+    <a href="https://www.facebook.com/LifeQuilt/" target="_blank"><img className={styles.fbButton} src={facebookButton} alt="Facebook button" /></a>
   </footer>
 );
 

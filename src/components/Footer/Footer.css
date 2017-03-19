@@ -1,6 +1,5 @@
 .footer {
   padding: 10px;
-  background-color: #ACACAC;
   display: flex;
   justify-content: space-between;
 }
@@ -13,12 +12,10 @@
   width: 180px;
   height: 40px;
   align-self: center;
+  margin: 10px;
 }
 
-.contactInfo {
-  background-color: white;
-}
-
-.contactInfo p {
-  margin: 5px;
+.footer img.fbButton {
+  width: 140px;
+  height: 40px;
 }
