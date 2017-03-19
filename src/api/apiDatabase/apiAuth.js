@@ -1,12 +1,18 @@
 import * as firebase from 'firebase';
+import apiDatabase from './apiDatabase';
 
 const apiAuth = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
   firebase.auth().signInWithPopup(provider).then(result => {
-    const token = result.credential.accessToken;
     const user = result.user;
-    console.log(token, user);
+
+    const newAdmin = {
+      email: user.email,
+    };
+
+    const databaseRef = apiDatabase.ref(`/admins/${user.uid}`);
+    databaseRef.set(newAdmin);
   }).catch(error => {
     const errorCode = error.code;
     const errorMessage = error.message;
