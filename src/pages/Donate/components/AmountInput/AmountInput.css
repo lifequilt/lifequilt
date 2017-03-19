@@ -1,0 +1,41 @@
+.inputEnabled {
+  margin-bottom: 8px;
+  min-height: 64px;
+  width: 28vw;
+  border: 2px solid $orangeDark;
+  background-color: $orangeLight;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputDisabled {
+  margin-bottom: 8px;
+  min-height: 64px;
+  width: 28vw;
+  border: 2px solid $grayMedium;
+  opacity: 0.8;
+  background-color: $grayLight;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.3s, border 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.inputDisabled:hover {
+  opacity: 0.8;
+  border: 2px solid $orangeDark;
+  background-color: $orangeLight;
+}
+
+.title {
+  font-size: 14px;
+}
+
+.subtitle {
+  font-size: 12px;
+}

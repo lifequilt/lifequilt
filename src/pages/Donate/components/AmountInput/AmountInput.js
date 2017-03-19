@@ -1,16 +1,23 @@
 import React, { PropTypes } from 'react';
 
-const AmountInput = props => (
-  <div>
-    <input type="radio" checked={props.checked} value={props.value} placeholder={props.title} onChange={e => props.onChange(props.stateKey, e)} />
-    <label htmlFor={props.title}>{props.title}</label>
-  </div>
-);
+const AmountInput = props => {
+  const styles = require('./AmountInput.css');
+
+  return (
+    <div>
+      <div className={props.checked ? styles.inputEnabled : styles.inputDisabled} value={props.value} onClick={() => props.onChange(props.stateKey, props.value)}>
+        <span className={styles.title}>{props.title}</span>
+        <span className={styles.subtitle}>{props.subtitle}</span>
+      </div>
+    </div>
+  );
+};
 
 AmountInput.propTypes = {
   stateKey: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
   value: PropTypes.node.isRequired,
   checked: PropTypes.bool.isRequired,
 };

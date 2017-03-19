@@ -18,12 +18,11 @@ const FIELDS_ARRAY = [
 ];
 
 const DONATE_LEVELS_ARRAY = [
-  { stateKey: 'donateAmount', amount: '5', title: '$5' },
-  { stateKey: 'donateAmount', amount: '10', title: '$10' },
-  { stateKey: 'donateAmount', amount: '20', title: '$20' },
-  { stateKey: 'donateAmount', amount: '50', title: '$50' },
-  { stateKey: 'donateAmount', amount: '100', title: '$100' },
-  { stateKey: 'donateAmount', amount: '150', title: '$150' },
+  { stateKey: 'donateAmount', amount: '10', title: '$10', subtitle: 'Provide a child with writing supplies' },
+  { stateKey: 'donateAmount', amount: '25', title: '$25', subtitle: 'Provide a child with a backpack' },
+  { stateKey: 'donateAmount', amount: '50', title: '$50', subtitle: 'Provide a child with winter gear' },
+  { stateKey: 'donateAmount', amount: '85', title: '$85', subtitle: 'Provide a child with winter gear and fully loaded backpack' },
+  { stateKey: 'donateAmount', amount: '100', title: '$100', subtitle: 'Provide a child with breakfast for a month' },
 ];
 
 export class DonateForm extends Component {
@@ -86,9 +85,9 @@ export class DonateForm extends Component {
     this.setState(newState);
   }
 
-  onChangeDonate(key, event) {
+  onChangeDonate(key, value) {
     const newState = { customDonateAmount: '' };
-    newState[key] = event.target.value;
+    newState[key] = value;
     this.setState(newState);
   }
 
@@ -168,24 +167,28 @@ export class DonateForm extends Component {
             Please choose a donation amount:
           </div>
           <div className={styles.donateTiers}>
-            {DONATE_LEVELS_ARRAY.map((field, id) =>
-              <AmountInput
-                key={id}
-                stateKey={field.stateKey}
-                onChange={this.onChangeDonate}
-                value={field.amount}
-                title={field.title}
-                checked={this.state.donateAmount === field.amount && this.state.customDonateAmount === ''}
-              />
-            )}
-            <div className={styles.customDonateInput}>
-              <input type="radio" onChange={this.onSelectCustomDonate} checked={this.state.customDonateAmount !== '' && this.state.donateAmount === ''} />
-              <input
-                type="text"
-                value={this.state.customDonateAmount}
-                placeholder="Custom Amount"
-                onChange={e => this.onChangeCustomDonate('customDonateAmount', e)}
-              />
+            <div className={styles.donateTiersUpper}>
+              {DONATE_LEVELS_ARRAY.map((field, id) =>
+                <AmountInput
+                  key={id}
+                  stateKey={field.stateKey}
+                  onChange={this.onChangeDonate}
+                  value={field.amount}
+                  title={field.title}
+                  subtitle={field.subtitle}
+                  checked={this.state.donateAmount === field.amount && this.state.customDonateAmount === ''}
+                />
+              )}
+              <div className={this.state.customDonateAmount !== '' ? styles.customDonateInputEnabled : styles.customDonateInputDisabled} onClick={() => this.setState({ customDonateAmount: 0})}>
+                <input
+                  className={styles.customInput}
+                  type="text"
+                  value={this.state.customDonateAmount}
+                  placeholder="$"
+                  onChange={e => this.onChangeCustomDonate('customDonateAmount', e)}
+                />
+                <span className={styles.subtitle}>Provide an amount of your choice!</span>
+              </div>
             </div>
           </div>
           <div className={styles.errorsContainer}>
