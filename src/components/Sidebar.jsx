@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Home from '../pages/Home/index';
+import DonatePage from '../pages/DonatePage';
 
 // Each logical "route" has two components, one for
 // the sidebar and one for the main area. We want to
@@ -28,6 +29,10 @@ const routes = [
   {
     path: '/contact',
     main: () => <h2>Contact</h2>,
+  },
+  { path: '/donate',
+    sidebar: () => <div>shoelaces!</div>,
+    main: () => <DonatePage />,
   },
 ];
 
