@@ -1,5 +1,5 @@
 var globalVariables = {
-  primary: 'green'
+  primary: 'white',
 };
 
 module.exports = globalVariables;

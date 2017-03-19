@@ -1,3 +1,16 @@
 .footer {
-  background-color: blue;
+  padding: 10px;
+  background-color: #ACACAC;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerNav {
+  align-self: center;
+}
+
+.footer img {
+  width: 180px;
+  height: 40px;
+  align-self: center;
 }
