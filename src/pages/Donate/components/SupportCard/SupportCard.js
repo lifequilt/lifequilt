@@ -12,6 +12,7 @@ const SupportCard = props => {
       <div className={styles.SupportDescription}>
         {props.supportDescription}
       </div>
+      {props.children}
     </div>
   );
 };

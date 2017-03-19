@@ -11,7 +11,7 @@
   background-size: contain;
   margin-left: 40px;
 }
-
+/*
 .HeaderList {
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@
   text-decoration: none;
   min-width: 15px;
   text-transform: uppercase;
-}
+}*/
 
 @media screen and (max-width: 1000px) {
   .header img {

@@ -23,6 +23,11 @@ class Donate extends Component {
 
     return (
       <div className={styles.DonatePage}>
+        <Section className={styles.donateText}>
+          <h2>Give the Gift of Educational Success</h2>
+          <p>Helping young people go to and succeed in school is Life Quilt’s number one priority.</p>
+          <p>Your donation will go directly toward sending the next generation of leaders to school by providing them the support and tools they need to succeed in their studies.</p><p>Please support our students by donating today.</p>
+        </Section>
         <Section>
           <DonateForm />
         </Section>
@@ -41,12 +46,16 @@ class Donate extends Component {
               supportImage={amazonSmileImage}
               supportTitle="Shop on Amazon Smile"
               supportDescription="Support Life Quilt Foundation by starting your shopping at smile.amazon.com"
-            />
+            >
+              <a className={styles.cardButton} href="https://smile.amazon.com/?ie=UTF8&ein=27-3621437">SHOP NOW</a>
+            </SupportCard>
             <SupportCard
               supportImage={raceImage}
               supportTitle="Volunteer"
               supportDescription="Delivering school supplies to children at the Loretto Hospital Foundation’s Visit With Santa, serving a holiday meal to over 200 hungry residents of Ford Heights IL, are two ways our volunteers have served the community. Expect to be challenged and inspired."
-            />
+            >
+              <Link to="/volunteer" className={styles.cardButton}>FIND OUT HOW</Link>
+            </SupportCard>
           </div>
         </div>
         <Banner className={styles.Banner}>
