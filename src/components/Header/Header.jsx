@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Logo from '../Logo';
 import Nav from '../Nav';
@@ -8,7 +9,7 @@ const styles = require('./Header.css');
 
 const Header = () => (
   <header className={styles.header}>
-    <Logo path={logo} altText={'Logo Image'} />
+    <Link to="/"><Logo path={logo} altText={'Logo Image'} /></Link>
     <Nav />
   </header>
 );

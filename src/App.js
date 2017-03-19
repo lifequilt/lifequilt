@@ -16,6 +16,7 @@ import ThankYou from './pages/ThankYou';
 
 // Components
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 const styles = require('./App.css');
 

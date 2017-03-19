@@ -8,6 +8,7 @@
 .header img {
   width: 300px;
   height: 80px;
+  background-size: contain;
 }
 
 .HeaderList {
@@ -23,4 +24,11 @@
   text-decoration: none;
   min-width: 15px;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 1000px) {
+  .header img {
+    width: 250px;
+    height: 67px;
+  }
 }
