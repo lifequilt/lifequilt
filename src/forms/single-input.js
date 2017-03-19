@@ -1,7 +1,9 @@
 import React, { PropTypes } from 'react';
 
+const styles = require('./forms.css');
+
 const SingleInput = props => (
-  <div>
+  <div className={styles.singleInput}>
     <label htmlFor={props.title}>{props.title}{props.required ? ' *' : null}</label>
     <input value={props.value} placeholder={props.title} onChange={e => props.onChange(props.stateKey, e)} />
   </div>

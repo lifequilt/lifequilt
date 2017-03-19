@@ -2,8 +2,8 @@
 
 import React, { Component, PropTypes } from 'react';
 import { withRouter } from 'react-router';
-import SingleInput from './single-input';
-import { postDatabase } from '../api/apiDatabase';
+import SingleInput from '../single-input';
+import { postDatabase } from '../../api/apiDatabase';
 
 const FIELDS_ARRAY = [
   { stateKey: 'firstName', title: 'First Name' },
@@ -11,6 +11,8 @@ const FIELDS_ARRAY = [
   { stateKey: 'email', title: 'Email' },
   { stateKey: 'phoneNumber', title: 'Phone Number' },
 ];
+
+const styles = require('./user-form.css');
 
 export class UserForm extends Component {
   constructor(props) {
@@ -60,7 +62,7 @@ export class UserForm extends Component {
               title={field.title}
             />
           )}
-          <input type="submit" value="Submit" />
+          <input className={styles.submitButton} type="submit" value="Submit" />
         </form>
       </div>
     );
