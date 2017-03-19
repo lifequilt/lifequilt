@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { UserForm } from '../../../forms/user-form';
+import { UserForm } from '../../../forms/user/user-form';
 
 export class Partner extends Component {
   render() {
