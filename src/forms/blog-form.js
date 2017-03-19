@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SingleInput from './single-input';
-import { postDatabase } from '../api/apiDatabase';
+import { postDatabase } from '../api/apiDatabase/postDatabase';
 import RichTextEditor from 'react-rte';
 
 const FIELDS_ARRAY = [
@@ -35,7 +35,6 @@ export class BlogForm extends Component {
     const onRejected = error => console.log('Errors: ', error);
 
     const content = this.state.content.toString('html');
-    console.log(postDatabase);
 
     postDatabase({ jsonObject: {
       title: this.state.title,
@@ -47,10 +46,11 @@ export class BlogForm extends Component {
   }
 
   handleChange(content) {
+    let newContent = content.toString('html');
     this.setState({content});
-    content.toString('html')
-    // console.log(this.state);
-  };
+    // console.log(newContent);
+  }
+
   render() {
 
     return (
