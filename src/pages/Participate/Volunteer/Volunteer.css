@@ -1,7 +1,7 @@
-.container {
+  .container {
 	display: flex;
 	flex-wrap: wrap;
-  background-color: $orangeLight;
+  background-color: '#F48F0D';
 }
 
 .containerForm {

@@ -22,7 +22,7 @@
 
 .partSection:hover {
   & .button {
-    background-color: $blueMedium;
+    background-color: '#2E5077';
     text-decoration: none;
   }
 }
@@ -35,7 +35,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $grayDark;
+  background-color: 'rgb(120, 124, 127)';
   color: white;
   border: none;
   text-decoration: none;
@@ -44,7 +44,7 @@
 }
 
 .button:hover {
-  background-color: $blueMedium;
+  background-color: '#2E5077';
 }
 
 .donateLink {
@@ -69,10 +69,10 @@
   user-select: none;
   white-space: normal;
   color: #fff;
-  background-color: $orangeDark;
+  background-color: '#EF632F';
   &:hover,
   &:active {
-    background-color: $orangeLight;
+    background-color: '#F48F0D';
   }
 }
 

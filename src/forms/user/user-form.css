@@ -22,9 +22,9 @@
   user-select: none;
   white-space: normal;
   color: #fff;
-  background-color: $orangeDark;
+  background-color: '#EF632F';
   &:hover,
   &:active {
-    background-color: $orangeLight;
+    background-color: '#F48F0D';
   }
 }
