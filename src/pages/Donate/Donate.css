@@ -6,6 +6,10 @@
   background-color: '#FF9F1C';
 }
 
+.donateText {
+  width: 60%;
+}
+
 .supportContainer {
   border-radius: 4px;
   margin-top: 32px;
@@ -30,4 +34,49 @@
 
 .donateBanner {
   width: 100%;
+}
+
+.Banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donateLink {
+  align-self: center;
+  -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.15), 0 2px 1px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: normal;
+  outline: 0;
+  padding: 14px 18px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  transition: box-shadow .1s ease-in,color .2s ease-out,background-color .2s ease-in;
+  user-select: none;
+  white-space: normal;
+  color: #fff;
+  background-color: $orangeDark;
+  &:hover,
+  &:active {
+    background-color: $orangeLight;
+  }
+}
+
+.cardButton {
+  font-size: 1rem;
+  border-radius: 4px;
+  margin: 5px;
+  padding: 10px;
+  color: #fff;
+  margin: auto;
+  background-color: $orangeDark;
 }

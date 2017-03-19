@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import getDatabase from '../../api/apiDatabase/getDatabase';
 import styles from './Blog.css';
@@ -18,6 +17,9 @@ class Blog extends Component {
   }
 
   render() {
+    if (!this.state.blogs) {
+      return <h1 className={styles.placeholder}>Content coming soon!</h1>;
+    }
     return (
       <div>
         {Object.entries(this.state.blogs).map(blog =>

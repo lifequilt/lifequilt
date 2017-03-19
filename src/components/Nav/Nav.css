@@ -20,7 +20,8 @@
   margin: 10px;
   color: '#EF632F';
   font-weight: 700;
-  text-decoration: underline;
+  border-radius: 2px;
+  /*text-decoration: underline;*/
   text-transform: uppercase;
   font-size: 1.1rem;
 }

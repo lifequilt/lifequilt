@@ -4,7 +4,7 @@ import Logo from '../Logo';
 import Nav from '../Nav';
 
 const facebookButton = require('../../assets/facebook.jpeg');
-const logo = require('../../assets/logo.png');
+const logo = require('../../assets/new-logo.jpg');
 const styles = require('./Footer.css');
 
 const Footer = () => (

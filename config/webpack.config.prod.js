@@ -43,6 +43,15 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
   ? { publicPath: Array(cssFilename.split('/').length).join('../') }
   : undefined;
 
+var cssLoaderQuery = {
+  modules : true,
+  sourceMap: true,
+  importLoaders: 2,
+};
+
+var cssLoaderQueryString = '?' + JSON.stringify(cssLoaderQuery);
+
+
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
 // The development configuration is different and lives in a separate file.
@@ -142,9 +151,11 @@ module.exports = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
-          'style',
-          'css?importLoaders=1!postcss',
-          extractTextPluginOptions
+          'style-loader',
+          [
+          'css-loader' + cssLoaderQueryString,
+          'postcss-loader'
+          ]
         )
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
@@ -167,9 +178,7 @@ module.exports = {
     ]
   },
   
-  postcss: function() {
-    return postCSSConfig;
-  },
+  postcss: [require('precss')],
   plugins: [
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
