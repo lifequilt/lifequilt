@@ -37,7 +37,7 @@ const Participate = () => (
       </Section>
     </div>
     <Banner className={styles.Banner}>
-      <Link to="/donate" className={styles.donateLink}>Donate!</Link>
+      <Link to="/donate" className={styles.donateLink}>I want to help!</Link>
     </Banner>
   </div>
 );
