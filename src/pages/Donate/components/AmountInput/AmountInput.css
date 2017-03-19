@@ -3,7 +3,7 @@
   min-height: 64px;
   width: 28vw;
   border: 2px solid $orangeDark;
-  background-color: $orangeLight;
+  background-color: $orangeMedium;
   border-radius: 8px;
   cursor: pointer;
   transition: color 0.3s;
@@ -29,7 +29,7 @@
 .inputDisabled:hover {
   opacity: 0.8;
   border: 2px solid $orangeDark;
-  background-color: $orangeLight;
+  background-color: $orangeMedium;
 }
 
 .title {
