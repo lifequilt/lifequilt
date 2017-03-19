@@ -1,7 +1,10 @@
 /* eslint-disable */
 
 import React, { Component, PropTypes } from 'react';
+<<<<<<< HEAD
 import { withRouter } from 'react-router';
+=======
+>>>>>>> forms and passing userTypes
 import SingleInput from './single-input';
 import { postDatabase } from '../api/apiDatabase';
 
@@ -69,7 +72,13 @@ export class UserForm extends Component {
 
 UserForm.propTypes = {
   userType: PropTypes.string.isRequired,
+<<<<<<< HEAD
   history: PropTypes.object.isRequired,
 };
 
 export default withRouter(UserForm);
+=======
+};
+
+export default UserForm;
+>>>>>>> forms and passing userTypes
