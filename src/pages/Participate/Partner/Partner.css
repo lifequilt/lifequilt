@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $orangeLight;
+}
+
+.form{
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: .9;
+  text-align: left;
+  padding: 10px 31px ;
+  min-width: 400px;
+  background: white;
+  margin: 21px;
+}
+
+.sidebar {
+  /*-webkit-flex: 1;*/
+  flex: .1;
+  padding: 0px 31px;
+  min-width: 400px;
+  background: white;
+  margin: 21px;
+}
+
+.header {
+  font-size: 16px;
+  border-bottom: 1px solid #EF632F;
+  margin-bottom: 20px;
+}
+
+.item {
+  width: 50%;
+}

@@ -1,20 +1,30 @@
 .container {
 	display: flex;
 	flex-wrap: wrap;
+  background-color: $orangeLight;
 }
 
 .containerForm {
-   /* This will be twice as big as the small item. */
-    /*-webkit-box-flex: 1;*/
-    -webkit-flex: 1;
-	flex: 1;
-    text-align: left;
-    padding: 0 50px;
-    min-width: 400px
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: .7;
+  text-align: left;
+  padding: 0px 31px;
+  min-width: 400px;
+  background: white;
+  margin: 21px;
 }
 
 .sidebar {
-   -webkit-flex: 1;
-   flex: 1;
-   padding: 0 50px;
+  flex: .3;
+  padding: 0px 31px;
+  min-width: 400px;
+  background: white;
+  margin: 21px;
+}
+
+.header{
+  font-size: 16px;
+  border-bottom: 1px solid #EF632F;
+  margin-bottom: 20px;
 }

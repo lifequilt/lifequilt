@@ -1,6 +1,32 @@
 .container {
   text-align: left;
   margin: 0 auto;
-  padding: 10px;
-  background-color: #F48F0D;
+  padding: 30px;
+  background-color: $orangeLight;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content {
+	-webkit-flex: 1;
+  flex: 1;
+  padding: 0 19px;	
+  margin: 20px;
+  background: white;
+  min-width: 400px;
+}
+
+.image {
+	 margin: auto;
+  text-align: center;
+}
+
+.content img {
+	max-width: 80%;
+}
+
+.header {
+  font-size: 16px;
+  border-bottom: 1px solid #EF632F;
+  margin-bottom: 20px;
 }
