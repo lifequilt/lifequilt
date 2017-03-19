@@ -23,15 +23,11 @@ const routes = [
     main: () => <h2>Get Involved</h2>,
   },
   {
-    path: '/donate',
-    main: () => <h2>Donate</h2>,
-  },
-  {
     path: '/contact',
     main: () => <h2>Contact</h2>,
   },
-  { path: '/donate',
-    sidebar: () => <div>shoelaces!</div>,
+  {
+    path: '/donate',
     main: () => <DonatePage />,
   },
 ];
