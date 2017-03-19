@@ -35,7 +35,7 @@
 
 .primary {
   color: #fff;
-  background-color: $grayMedium;
+  background-color: 'rgb(155, 161, 167)';
   &:hover,
   &:active {
     background-color: $orange;
@@ -43,23 +43,23 @@
 }
 
 .disabled {
-  background-color: $grayLight;
-  color: $grayMedium;
+  background-color: 'rgb(236, 237, 239)';
+  color: 'rgb(155, 161, 167)';
   box-shadow: none;
   cursor: default;
   &:hover,
   &:active {
-    background-color: $grayLight;
+    background-color: 'rgb(236, 237, 239)';
   }
 }
 
 .secondary {
-  color: $grayMedium;
-  background-color: $grayLight;
+  color: 'rgb(155, 161, 167)';
+  background-color: 'rgb(236, 237, 239)';
   box-shadow: none;
   cursor: default;
   &:hover,
   &:active {
-    background-color: $grayLight;
+    background-color: 'rgb(236, 237, 239)';
   }
 }

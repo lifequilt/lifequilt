@@ -2,8 +2,8 @@
   margin-bottom: 8px;
   min-height: 64px;
   width: 28vw;
-  border: 2px solid $orangeDark;
-  background-color: $orangeMedium;
+  border: 2px solid '#EF632F';
+  background-color: '#FF9F1C';
   border-radius: 8px;
   cursor: pointer;
   transition: color 0.3s;
@@ -16,9 +16,9 @@
   margin-bottom: 8px;
   min-height: 64px;
   width: 28vw;
-  border: 2px solid $grayMedium;
+  border: 2px solid 'rgb(155, 161, 167)';
   opacity: 0.8;
-  background-color: $grayLight;
+  background-color: 'rgb(236, 237, 239)';
   border-radius: 8px;
   cursor: pointer;
   transition: color 0.3s, border 0.3s;
@@ -28,8 +28,8 @@
 }
 .inputDisabled:hover {
   opacity: 0.8;
-  border: 2px solid $orangeDark;
-  background-color: $orangeMedium;
+  border: 2px solid '#EF632F';
+  background-color: '#FF9F1C';
 }
 
 .title {
