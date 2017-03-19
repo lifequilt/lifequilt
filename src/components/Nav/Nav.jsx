@@ -2,12 +2,12 @@ import React from 'react';
 
 import NavItem from './components/NavItem';
 
+const styles = require('./Nav.css');
+
 const Nav = () => (
-  <nav>
-    <NavItem title={'Home'} />
+  <nav className={styles.nav} >
     <NavItem title={'About'} />
     <NavItem title={'Get Involved'} />
-    <NavItem title={'Contact'} />
     <NavItem title={'Donate'} />
   </nav>
 );
