@@ -11,7 +11,7 @@ const Footer = () => (
   <footer className={styles.footer}>
     <Logo clasName={styles.footerLogo} path={logo} />
     <Nav className={styles.footerNav} />
-    <a href="https://www.facebook.com/LifeQuilt/" target="_blank"><img className={styles.fbButton} src={facebookButton} alt="Facebook button" /></a>
+    <a href="https://www.facebook.com/LifeQuilt/" rel="noopener noreferrer" target="_blank"><img className={styles.fbButton} src={facebookButton} alt="Facebook button" /></a>
   </footer>
 );
 
