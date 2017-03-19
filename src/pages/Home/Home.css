@@ -9,7 +9,22 @@
   justify-content: space-around;
 }
 
+.main section {
+  flex: .3;
+}
+
 .main img{
   width: 300px;
   flex: 1;
+}
+
+@media screen and (max-width: 1000px) {
+  .homepageBanner {
+    height: 250px;
+  }
+
+  .main img {
+    width: 250px;
+    height: 188px;
+  }
 }

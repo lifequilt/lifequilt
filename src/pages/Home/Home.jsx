@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Banner from '../../components/Banner';
-import Footer from '../../components/Footer';
 import Section from '../../components/Section';
 
 const homepageBanner = require('../../assets/homepageBanner.jpg');
@@ -17,26 +16,25 @@ const Home = () => (
       <Section>
         <img src={image1} alt="pic" />
         <p>
-          Lorem ipsum dolor sit amet, ne modus lobortis persequeris pro, dicat ullamcorper ut qui, his insolens dissentiunt ut. Ex inimicus signiferumque nec, sint posse dictas an duo. Has ex quando perfecto reprehendunt.
+          Life Quilt is committed to breaking the barriers to education caused by poverty and lack of funds.
         </p>
       </Section>
       <Section>
         <img src={image2} alt="pic" />
         <p>
-          Lorem ipsum dolor sit amet, ne modus lobortis persequeris pro, dicat ullamcorper ut qui, his insolens dissentiunt ut. Ex inimicus signiferumque nec, sint posse dictas an duo. Has ex quando perfecto reprehendunt.
+          In partnership with other organizations, we provide school supplies, winter clothing and food to students in need.
         </p>
       </Section>
       <Section>
         <img src={image3} alt="pic" />
         <p>
-          Lorem ipsum dolor sit amet, ne modus lobortis persequeris pro, dicat ullamcorper ut qui, his insolens dissentiunt ut. Ex inimicus signiferumque nec, sint posse dictas an duo. Has ex quando perfecto reprehendunt.
+          We believe that parents and guardians are a child’s first teacher and Life Quilt works to provide resources they need to nurture the child’s successful academic career.
         </p>
       </Section>
     </div>
     <Banner>
       <h3>Help us out! Donate!</h3>
     </Banner>
-    <Footer />
   </div>
 );
 
