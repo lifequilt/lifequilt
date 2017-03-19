@@ -7,7 +7,7 @@
 .containerForm {
   -webkit-box-flex: 1;
   -ms-flex: 1;
-  flex: 1;
+  flex: .7;
   text-align: left;
   padding: 0px 31px;
   min-width: 400px;
@@ -16,8 +16,7 @@
 }
 
 .sidebar {
-  -webkit-flex: 1;
-  flex: 1;
+  flex: .3;
   padding: 0px 31px;
   min-width: 400px;
   background: white;

@@ -5,8 +5,8 @@
 }
 
 .form{
-/*  -webkit-box-flex: 1;
-  -ms-flex: 1;*/
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: .9;
   text-align: left;
   padding: 10px 31px ;
