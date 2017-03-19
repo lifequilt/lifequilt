@@ -15,6 +15,7 @@ var postCSSConfig = require('./postcss.config');
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
 var publicPath = paths.servedPath;
+console.log(publicPath);
 // Some apps do not use client-side routing with pushState.
 // For these, "homepage" can be set to "." to enable relative asset paths.
 var shouldUseRelativeAssetPaths = publicPath === './';
@@ -42,6 +43,7 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
   // Making sure that the publicPath goes back to to build folder.
   ? { publicPath: Array(cssFilename.split('/').length).join('../') }
   : undefined;
+console.log(extractTextPluginOptions);
 
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
@@ -143,8 +145,7 @@ module.exports = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
           'style-loader',
-          'css-loader?importLoaders=!postcss-loader',
-          extractTextPluginOptions
+          'css-loader?importLoaders=!postcss-loader'
         )
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
