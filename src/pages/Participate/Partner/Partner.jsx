@@ -3,6 +3,10 @@ import { UserForm } from '../../../forms/user/user-form';
 
 const styles = require('./Partner.css');
 
+const phoenixImage = require('../../../assets/phoenix-library.png');
+const uicImage = require('../../../assets/uic.png');
+const lorettoImage = require('../../../assets/loretto-hospital.png');
+
 export class Partner extends Component {
   render() {
     return (
@@ -15,10 +19,9 @@ export class Partner extends Component {
           />
         </div>
         <div className={styles.sidebar}>
-          <h2>This is sidebar content.</h2>
-          <p>Picture Here</p>
-          <p>Picture Here</p>
-          <p>Picture Here</p>
+          <img src={phoenixImage} className={styles.item} alt="Phoenix Library"/>
+          <img src={uicImage} className={styles.item} alt="UIC"/>
+          <img src={lorettoImage} className={styles.item} alt="Loretto Hospital"/>
         </div>
       </div>
     );
