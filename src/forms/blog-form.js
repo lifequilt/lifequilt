@@ -23,6 +23,7 @@ export class BlogForm extends Component {
   onChange(key, event) {
     const newState = {};
     newState[key] = event.target.value;
+    newState['createdAt'] = (new Date()).toString()
     this.setState(newState);
     console.log(this.state)
   }
