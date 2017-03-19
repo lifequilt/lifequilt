@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: rgb(60, 63, 70); 
-  background-color: $orangeMedium;
+  color: rgb(60, 63, 70);
+  background-color: #FF9F1C;
 }
 
 .donateText {
