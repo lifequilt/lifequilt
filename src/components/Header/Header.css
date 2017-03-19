@@ -1,0 +1,14 @@
+.HeaderList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 2em;
+  color: black;
+}
+
+.HeaderListItem {
+  float: right;
+  text-decoration: none;
+  padding: 12px;
+}
