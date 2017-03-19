@@ -8,7 +8,14 @@
   flex: 1;
   padding: 5px;
   margin: 10px;
-  color: #F49722;
+  color: $orangeMedium;
   text-decoration: none;
-  text-transform: uppercase;
+}
+
+.navItemActive {
+  flex: 1;
+  padding: 5px;
+  margin: 10px;
+  color: $orangeDark;
+  font-weight: 700;
 }
