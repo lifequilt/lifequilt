@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SingleInput from './single-input';
 import SingleTextarea from './single-textarea';
 import { postDatabase } from '../api/apiDatabase';
+import RichTextEditor from 'react-rte';
 
 const FIELDS_ARRAY = [
   { stateKey: 'title', title: 'Title' },
@@ -12,11 +13,12 @@ export class BlogForm extends Component {
     super(props);
     this.state = {
       title: '',
-      content: '',
+      content: RichTextEditor.createEmptyValue(),
       createdAt: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
   onChange(key, event) {
     const newState = {};
@@ -38,8 +40,14 @@ export class BlogForm extends Component {
       .then(onFulfilled)
       .catch(onRejected);
   }
+  handleChange(content) {
+    console.log(content);
+    this.setState({content});
+  };
   render() {
+
     return (
+
       <div>
         <form onSubmit={this.handleSubmit}>
           {FIELDS_ARRAY.map(field =>
@@ -52,12 +60,9 @@ export class BlogForm extends Component {
             />
           )}
 
-          <SingleTextarea 
-          	key='content'
-	        stateKey='content'
-	        onChange={this.onChange}
-	        value={this.state.content}
-	        title="Content"
+          <RichTextEditor
+            value={this.state.content}
+            onChange={this.handleChange}
           />
           <input type="submit" value="Submit" />
         </form>

@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import getDatabase from '../../api/apiDatabase/getDatabase';
 import styles from './Blog.css';
