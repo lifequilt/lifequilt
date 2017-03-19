@@ -7,7 +7,7 @@ class Blog extends Component {
   constructor() {
     super();
     this.state = {
-      blogs: getDatabase('/blogs'),
+      blogs: {},
     };
   }
 
