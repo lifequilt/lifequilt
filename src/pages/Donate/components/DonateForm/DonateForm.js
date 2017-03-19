@@ -179,7 +179,7 @@ export class DonateForm extends Component {
                   checked={this.state.donateAmount === field.amount && this.state.customDonateAmount === ''}
                 />
               )}
-              <div className={this.state.customDonateAmount !== '' ? styles.customDonateInputEnabled : styles.customDonateInputDisabled} onClick={() => this.setState({ customDonateAmount: 0})}>
+              <div className={this.state.customDonateAmount !== '' ? styles.customDonateInputEnabled : styles.customDonateInputDisabled} onClick={() => this.setState({ customDonateAmount: 0 })}>
                 <input
                   className={styles.customInput}
                   type="text"
