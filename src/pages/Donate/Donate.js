@@ -4,7 +4,7 @@ import Section from '../../components/Section';
 import DonateForm from './components/DonateForm';
 import SupportCard from './components/SupportCard';
 
-class DonatePage extends Component {
+class Donate extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,19 +13,17 @@ class DonatePage extends Component {
   }
 
   render() {
-    const styles = require('./DonatePage.css');
+    const styles = require('./Donate.css');
 
     return (
       <div className={styles.DonatePage}>
-        <h2>Donate</h2>
-
         <Section>
           <DonateForm />
         </Section>
 
         <div className={styles.supportContainer}>
           <div className={styles.supportHeader}>
-            Other ways to support us
+            Other ways to support us:
           </div>
           <div className={styles.supportCardContainer}>
             <SupportCard
@@ -54,4 +52,4 @@ class DonatePage extends Component {
   }
 }
 
-export default DonatePage;
+export default Donate;
