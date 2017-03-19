@@ -46,7 +46,7 @@ const About = () => (
         strengthen their roles as their child’s first teacher.
       </p>
       <div className={styles.image}>
-        <img src={backpackImage} alt="kids with backpacks"/>
+        <img src={backpackImage} alt="kids with backpacks" />
       </div>
     </div>
   </div>
