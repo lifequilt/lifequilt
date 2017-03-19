@@ -52,10 +52,10 @@
   user-select: none;
   white-space: normal;
   color: #fff;
-  background-color: '#EF632F';
+  background-color: #EF632F;
   &:hover,
   &:active {
-    background-color: '#F48F0D';
+    background-color: #F48F0D;
   }
 }
 
