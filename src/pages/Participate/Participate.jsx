@@ -14,15 +14,15 @@ const Participate = () => (
     <div className={styles.main}>
       <Section>
         <img src={volunteerImage} alt="pic" />
-        <Link to="/volunteer" className={styles.button}>VOLUNTEER</Link>
+        <Link to="/participate/volunteer" className={styles.button}>VOLUNTEER</Link>
       </Section>
       <Section>
         <img src={partnerImage} alt="pic" />
-        <Link to="/partner" className={styles.button}>PARTNER</Link>
+        <Link to="/participate/partner" className={styles.button}>PARTNER</Link>
       </Section>
       <Section>
         <img src={contactImage} alt="pic" />
-        <Link to="/contact" className={styles.button}>HAVE A QUESTION?</Link>
+        <Link to="/participate/contact" className={styles.button}>HAVE A QUESTION?</Link>
       </Section>
     </div>
     <Banner>
