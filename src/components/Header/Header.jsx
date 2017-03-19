@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Logo from '../Logo';
 import Nav from '../Nav';
 
-const logo = require('../../assets/logo.png');
+const logo = require('../../assets/new-logo.jpg');
 const styles = require('./Header.css');
 
 const Header = () => (

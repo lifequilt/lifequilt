@@ -10,8 +10,6 @@
 
 .SupportCard:hover {
   border-radius: 4px;
-  background-color: $orangeDark;
-  color: $grayLight;
 }
 
 .SupportDescription {

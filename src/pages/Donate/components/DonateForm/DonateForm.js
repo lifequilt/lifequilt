@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import SingleInput from '../../../../forms/single-input';
 import AmountInput from '../AmountInput';
 import { postDatabase } from '../../../../api/apiDatabase';
@@ -221,6 +223,8 @@ export class DonateForm extends Component {
           <input type="hidden" name="zip" value={this.state.zip} />
           <input type="hidden" name="country" value="US" />
           <input className={styles.submitButton} type="submit" value="Donate" />
+          <Link to="/policies" className={styles.privacyPolicy}>Privacy Policy</Link>
+          <Link to="/policies" className={styles.billOfRights}>Donor Bill of Rights</Link>
         </form>
       </div>
     );

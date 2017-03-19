@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import styles from './AdminLoginLink.css';
 import { apiAuth } from '../../api/apiDatabase';
+
+const styles = require('./AdminLoginLink.css');
 
 class AdminLoginLink extends Component {
   adminClick(event) {
@@ -10,7 +11,7 @@ class AdminLoginLink extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.container}>
         <p>If you have been previously registered as an administrator, clicking this button
         will enable you to post blogs.</p>
         <button href="" onClick={this.adminClick.bind(this)} className={styles.adminButton}>Admin</button>
