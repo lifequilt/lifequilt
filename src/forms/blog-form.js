@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import SingleInput from './single-input';
-import SingleTextarea from './single-textarea';
 import { postDatabase } from '../api/apiDatabase';
 import RichTextEditor from 'react-rte';
 
@@ -23,7 +22,7 @@ export class BlogForm extends Component {
   onChange(key, event) {
     const newState = {};
     newState[key] = event.target.value;
-    newState['createdAt'] = (new Date()).toString()
+    newState.createdAt = (new Date()).toString();
     this.setState(newState);
   }
   handleSubmit(e) {
@@ -35,19 +34,26 @@ export class BlogForm extends Component {
     };
     const onRejected = error => console.log('Errors: ', error);
 
+    const content = this.state.content.toString('html');
+    console.log(postDatabase);
 
-    postDatabase({ jsonObject: this.state, refName })
+    postDatabase({ jsonObject: {
+      title: this.state.title,
+      createdAt: this.state.createdAt,
+      content: content,
+    }, refName })
       .then(onFulfilled)
       .catch(onRejected);
   }
+
   handleChange(content) {
-    console.log(content);
     this.setState({content});
+    content.toString('html')
+    // console.log(this.state);
   };
   render() {
 
     return (
-
       <div>
         <form onSubmit={this.handleSubmit}>
           {FIELDS_ARRAY.map(field =>
