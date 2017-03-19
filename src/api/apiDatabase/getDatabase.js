@@ -4,6 +4,7 @@ const getDatabase = url => {
   const result = firebase.database().ref(url);
   result.on('value', snapshot => {
     console.log(snapshot.val());
+    return snapshot.val();
   });
 };
 
