@@ -1,5 +1,5 @@
 var globalVariables = {
-  primary: 'white',
+  primary: '#fff'
 };
 
 module.exports = globalVariables;

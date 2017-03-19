@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Home from '../pages/Home/index';
+import DonatePage from '../pages/DonatePage';
 
 // Each logical "route" has two components, one for
 // the sidebar and one for the main area. We want to
@@ -22,12 +23,12 @@ const routes = [
     main: () => <h2>Get Involved</h2>,
   },
   {
-    path: '/donate',
-    main: () => <h2>Donate</h2>,
-  },
-  {
     path: '/contact',
     main: () => <h2>Contact</h2>,
+  },
+  {
+    path: '/donate',
+    main: () => <DonatePage />,
   },
 ];
 
