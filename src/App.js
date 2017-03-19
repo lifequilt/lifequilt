@@ -6,18 +6,15 @@ import {
 import createBrowserHistory from 'history/createBrowserHistory';
 
 // Pages
-import Blog from './pages/Blog';
 import Donate from './pages/Donate';
+import Blog from './pages/Blog';
 import Home from './pages/Home';
 import Participate from './pages/Participate';
 import About from './pages/About';
-<<<<<<< HEAD
 import Contact from './pages/Participate/Contact';
 import Partner from './pages/Participate/Partner';
 import Volunteer from './pages/Participate/Volunteer';
 import ThankYou from './pages/ThankYou';
-=======
->>>>>>> add about component
 
 // Components
 import Header from './components/Header';
@@ -25,7 +22,6 @@ import Footer from './components/Footer';
 
 const styles = require('./App.css');
 
-<<<<<<< HEAD
 const customHistory = createBrowserHistory();
 
 export class App extends Component {
@@ -47,18 +43,6 @@ export class App extends Component {
             <Footer />
           </div>
         </Router>
-=======
-const App = () => (
-  <div className={styles.App}>
-    <Router history={hashHistory}>
-      <div>
-        <Header />
-        <Route exact path="/" component={Home} />
-        <Route path="/participate" component={Participate} />
-        <Route path="/donate" component={DonatePage} />
-        <Route path="/blog" component={Blog} />
-        <Route path="/about" component={About} />
->>>>>>> add about component
       </div>
     );
   }
