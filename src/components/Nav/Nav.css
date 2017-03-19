@@ -18,9 +18,11 @@
   flex: 1;
   padding: 5px;
   margin: 10px;
-  color: $orangeDark;
+  color: white;
+  background-color: $blueMedium;
   font-weight: 700;
-  text-decoration: underline;
+  border-radius: 2px;
+  /*text-decoration: underline;*/
   text-transform: uppercase;
   font-size: 1.1rem;
 }

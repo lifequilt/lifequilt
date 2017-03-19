@@ -49,10 +49,8 @@ class Donate extends Component {
             />
           </div>
         </div>
-        <Banner className={styles.donateBanner}>
-          <Link to="/contact">
-            <h3>Have something to donate?</h3>
-          </Link>
+        <Banner className={styles.Banner}>
+          <Link to="/participate/contact" className={styles.donateLink}>Have something to donate?</Link>
         </Banner>
       </div>
     );

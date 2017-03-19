@@ -16,6 +16,7 @@ import Partner from './pages/Participate/Partner';
 import Volunteer from './pages/Participate/Volunteer';
 import ThankYou from './pages/ThankYou';
 import AdminLoginLink from './pages/Admin/AdminLoginLink';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 // Components
 import Header from './components/Header';
@@ -42,6 +43,7 @@ export class App extends Component {
             <Route path="/donate" component={Donate} />
             <Route path="/thankyou" component={ThankYou} />
             <Route path="/admin" component={AdminLoginLink} />
+            <Route path="/policies" component={PrivacyPolicy} />
             <Footer />
           </div>
         </Router>
