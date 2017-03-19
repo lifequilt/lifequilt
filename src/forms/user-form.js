@@ -1,6 +1,7 @@
 /* eslint-disable */
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { withRouter } from 'react-router';
 import SingleInput from './single-input';
 import { postDatabase } from '../api/apiDatabase';
 
@@ -38,10 +39,13 @@ export class UserForm extends Component {
     };
     const onRejected = error => console.log('Errors: ', error);
 
+    const userObject = Object.assign(this.state, {'userType': this.props.userType});
 
-    postDatabase({ jsonObject: this.state, refName })
+    postDatabase({ jsonObject: userObject, refName })
       .then(onFulfilled)
       .catch(onRejected);
+
+    this.props.history.push('../thankyou', {});
   }
   render() {
     return (
@@ -63,4 +67,9 @@ export class UserForm extends Component {
   }
 }
 
-export default UserForm;
+UserForm.propTypes = {
+  userType: PropTypes.string.isRequired,
+  history: PropTypes.object.isRequired,
+};
+
+export default withRouter(UserForm);

@@ -8,15 +8,4 @@ const postDatabase = ({ refName, jsonObject }) => {
   return promise;
 };
 
-const setDatabase = ({ refName, jsonObject }) => {
-  const databaseRef = apiDatabase.ref(refName);
-
-  const promise = databaseRef.set(jsonObject);
-
-  return promise;
-};
-
-export {
-  postDatabase,
-  setDatabase,
-};
+export default postDatabase;

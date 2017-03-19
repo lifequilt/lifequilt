@@ -60,6 +60,7 @@ module.exports = {
     "react/require-default-props": "off",
     "react/jsx-no-bind": "off",
     "react/no-danger": "off",
+    "react/prefer-stateless-function": "off",
     "react/forbid-prop-types": "off",
     "react/jsx-filename-extension": "off",
     "react/prop-types": "off",
