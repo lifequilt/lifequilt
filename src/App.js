@@ -6,8 +6,8 @@ import {
 import createBrowserHistory from 'history/createBrowserHistory';
 
 // Pages
-import Blog from './pages/Blog';
 import Donate from './pages/Donate';
+import Blog from './pages/Blog';
 import Home from './pages/Home';
 import Participate from './pages/Participate';
 import About from './pages/About';

@@ -1,11 +1,8 @@
-import * as firebase from 'firebase';
+import api from '../api';
 
 const getDatabase = url => {
-  const result = firebase.database().ref(url);
-  result.on('value', snapshot => {
-    console.log(snapshot.val());
-    return snapshot.val();
-  });
+  const result = api.database().ref(url);
+  return result;
 };
 
 export default getDatabase;
