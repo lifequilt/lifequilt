@@ -1,9 +1,7 @@
 
 import React, { Component } from 'react';
 import getDatabase from '../../api/apiDatabase/getDatabase';
-
-// const blogs = getDatabase('/blogs/-KfZ8tKRaz35N_YzDueu');
-// console.log(blogs);
+import styles from './Blog.css';
 
 class Blog extends Component {
   constructor() {
@@ -22,9 +20,14 @@ class Blog extends Component {
   render() {
     return (
       <div>
-        {Object.entries(this.state.blogs).map(blog => <div key={blog[0]}>
-          {blog[1] ? blog[1].title : ''}
-        </div>)}
+        {Object.entries(this.state.blogs).map(blog =>
+          <div key={blog[0]} className={styles.blogContainer}>
+            <h1>{blog[1] ? blog[1].title : ''}</h1>
+            <p>
+              {blog[1] ? blog[1].content : ''}
+            </p>
+            <hr />
+          </div>)}
       </div>
     );
   }
