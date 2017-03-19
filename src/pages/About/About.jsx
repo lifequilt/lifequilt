@@ -3,8 +3,7 @@ import React from 'react';
 const About = () => (
   <div>
     <h2>About</h2>
-    <p>
-      The Universal Declaration of Human Rights makes clear that every child has
+    <p> The Universal Declaration of Human Rights makes clear that every child has
       the right to a free basic education, so poverty and lack of resources
       should not be a barrier to schooling.
       Life Quilt Foundation was founded on September 11, 2010 by a group of
