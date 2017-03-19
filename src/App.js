@@ -1,44 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  hashHistory,
+} from 'react-router-dom';
 
-import AdminLoginLink from './components/AdminLoginLink';
+// Pages
+import Blog from './pages/Blog';
+import Donate from './pages/Donate';
 import Home from './pages/Home';
-import Sidebar from './components/Sidebar';
+import Participate from './pages/Participate';
 
-import { postDatabase, apiAuth } from './api/apiDatabase';
-import { UserForm } from './forms/user-form';
+// Components
+import Header from './components/Header';
 
-class App extends Component {
+const styles = require('./App.css');
 
-  handleUserSubmit = () => {
-    const newUser = {
-      firstName: 'Bo',
-      lastName: 'Johnson',
-      phone: '513-680-8002',
-    };
-
-    const refName = '/users';
-    const onFulfilled = snapshot => {
-      console.log(snapshot.key);
-      return snapshot.key;
-    };
-    const onRejected = error => console.log('database push failed', error);
-
-    postDatabase({ jsonObject: newUser, refName }).then(onFulfilled).catch(onRejected);
-  }
-
-  handleAdminClick(event) {
-    event.preventDefault();
-    apiAuth();
-  }
-
-  render() {
-    const styles = require('./App.css');
-    return (
-      <div className={styles.App}>
-        <Home />
+const App = () => (
+  <div className={styles.App}>
+    <Router history={hashHistory}>
+      <div>
+        <Header />
+        <Route exact path="/" component={Home} />
+        <Route path="/participate" component={Participate} />
+        <Route path="/donate" component={Donate} />
+        <Route path="/blog" component={Blog} />
       </div>
-    );
-  }
-}
+    </Router>
+  </div>
+);
 
 export default App;

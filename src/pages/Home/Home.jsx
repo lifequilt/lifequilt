@@ -13,7 +13,6 @@ const styles = require('./Home.css');
 
 const Home = () => (
   <div>
-    <Header />
     <img className={styles.homepageBanner} src={homepageBanner} alt="Banner" />
     <div className={styles.main}>
       <Section>
