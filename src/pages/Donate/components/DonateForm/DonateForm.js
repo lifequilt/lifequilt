@@ -4,17 +4,17 @@ import AmountInput from '../AmountInput';
 import { postDatabase } from '../../../../api/apiDatabase';
 
 const FIELDS_ARRAY = [
-  { stateKey: 'firstName', title: 'First Name' },
-  { stateKey: 'lastName', title: 'Last Name' },
+  { stateKey: 'firstName', title: 'First Name', required: true },
+  { stateKey: 'lastName', title: 'Last Name', required: true },
   { stateKey: 'middleInitial', title: 'Middle Initial' },
   { stateKey: 'suffix', title: 'Suffix' },
   { stateKey: 'phoneNumber', title: 'Phone Number' },
-  { stateKey: 'email', title: 'Email' },
-  { stateKey: 'address1', title: 'Address Line 1' },
+  { stateKey: 'email', title: 'Email', required: true },
+  { stateKey: 'address1', title: 'Address Line 1', required: true },
   { stateKey: 'address2', title: 'Address Line 2' },
-  { stateKey: 'city', title: 'City' },
-  { stateKey: 'state', title: 'State' },
-  { stateKey: 'zip', title: 'Zip Code' },
+  { stateKey: 'city', title: 'City', required: true },
+  { stateKey: 'state', title: 'State', required: true },
+  { stateKey: 'zip', title: 'Zip Code', required: true },
 ];
 
 const DONATE_LEVELS_ARRAY = [
@@ -30,7 +30,7 @@ export class DonateForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      type: 'donor',
+      userType: 'donor',
       firstName: '',
       lastName: '',
       middleInitial: '',
@@ -44,17 +44,37 @@ export class DonateForm extends Component {
       zip: '',
       donateAmount: '',
       customDonateAmount: '',
+      errors: {
+        firstName: false,
+        lastName: false,
+        email: false,
+        address1: false,
+        city: false,
+        state: false,
+        zip: false,
+      },
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onChangeCustomDonate = this.onChangeCustomDonate.bind(this);
+    this.onSelectCustomDonate = this.onSelectCustomDonate.bind(this);
     this.onChangeDonate = this.onChangeDonate.bind(this);
+    this.checkRequiredFields = this.checkRequiredFields.bind(this);
+    this.showErrors = this.showErrors.bind(this);
   }
 
   onChange(key, event) {
     const newState = {};
     newState[key] = event.target.value;
-    console.log(this.state);
+    this.setState(newState);
+  }
+
+  onSelectCustomDonate() {
+    const newState = {
+      donateAmount: '',
+      customDonateAmount: 0,
+    };
+
     this.setState(newState);
   }
 
@@ -72,13 +92,38 @@ export class DonateForm extends Component {
     this.setState(newState);
   }
 
+  checkRequiredFields() {
+    const requiredFields = [
+      'firstName',
+      'lastName',
+      'email',
+      'address1',
+      'city',
+      'state',
+      'zip',
+    ];
 
-  handleSubmit() {
+    let valid = false;
+    const newErrors = { ...this.state.errors };
+    requiredFields.forEach(item => {
+      newErrors[item] = this.state[item] === '';
+      valid = this.state[item] === '';
+      this.setState({ errors: newErrors });
+    });
+
+    return valid;
+  }
+
+
+  handleSubmit(e) {
+    if (this.checkRequiredFields()) {
+      e.preventDefault();
+      this.setState({ showErrors: true });
+      return;
+    }
+    this.setState({ showErrors: false });
     const refName = '/users';
-    const onFulfilled = snapshot => {
-      console.log(snapshot.key);
-      return snapshot.key;
-    };
+    const onFulfilled = snapshot => snapshot.key;
     const onRejected = error => console.log('Errors: ', error);
 
     const {
@@ -87,22 +132,41 @@ export class DonateForm extends Component {
     } = this.state;
     const newDonateAmount = donateAmount === '' ? customDonateAmount : donateAmount;
 
-    const jsonObject = { ...this.state, donateAmount: newDonateAmount,
+    const jsonObject = {
+      ...this.state,
+      donateAmount: newDonateAmount,
     };
 
     postDatabase({ jsonObject, refName })
       .then(onFulfilled)
       .catch(onRejected);
   }
+
+  showErrors() {
+    return Object.keys(this.state.errors).map(inputName => {
+      const [displayNameObject] = FIELDS_ARRAY.filter(item => item.stateKey === inputName);
+      if (this.state.errors[inputName] === true) {
+        return <div>{displayNameObject.title} is required</div>;
+      }
+      return null;
+    });
+  }
+
   render() {
     const styles = require('./DonateForm.css');
 
     return (
       <div className={styles.formContainer}>
         <form className={styles.DonateForm} onSubmit={this.handleSubmit} method="POST" action="https://www.paypal.com/cgi-bin/webscr" target="_top">
+          <div className={styles.formHeader}>
+            Donor Form
+          </div>
           <input type="hidden" name="cmd" value="_donations" />
           <input type="hidden" name="business" value="25P939GKLLXB4" />
 
+          <div className={styles.donateTiersHeader}>
+            Please choose a donation amount:
+          </div>
           <div className={styles.donateTiers}>
             {DONATE_LEVELS_ARRAY.map((field, id) =>
               <AmountInput
@@ -114,13 +178,18 @@ export class DonateForm extends Component {
                 checked={this.state.donateAmount === field.amount && this.state.customDonateAmount === ''}
               />
             )}
-            <input type="radio" checked={this.state.customDonateAmount !== '' && this.state.donateAmount === ''} />
-            <input
-              type="text"
-              value={this.state.customDonateAmount}
-              placeholder="Custom Amount"
-              onChange={e => this.onChangeCustomDonate('customDonateAmount', e)}
-            />
+            <div className={styles.customDonateInput}>
+              <input type="radio" onChange={this.onSelectCustomDonate} checked={this.state.customDonateAmount !== '' && this.state.donateAmount === ''} />
+              <input
+                type="text"
+                value={this.state.customDonateAmount}
+                placeholder="Custom Amount"
+                onChange={e => this.onChangeCustomDonate('customDonateAmount', e)}
+              />
+            </div>
+          </div>
+          <div className={styles.errorsContainer}>
+            {this.state.showErrors ? this.showErrors() : null}
           </div>
           {FIELDS_ARRAY.map(field =>
             <SingleInput
@@ -129,9 +198,11 @@ export class DonateForm extends Component {
               onChange={this.onChange}
               value={this.state[field.stateKey]}
               title={field.title}
+              required={field.required}
             />
           )}
-          <input type="hidden" name="amount" value="100" />
+          <div className={styles.formBottom} />
+          <input type="hidden" name="amount" value={this.state.donateAmount === '' ? this.state.customDonateAmount : this.state.donateAmount} />
           <input type="hidden" name="currency_code" value="USD" />
           <input type="hidden" name="address_override" value="1" />
           <input type="hidden" name="first_name" value={this.state.firstName} />
@@ -146,7 +217,7 @@ export class DonateForm extends Component {
           <input type="hidden" name="state" value={this.state.state} />
           <input type="hidden" name="zip" value={this.state.zip} />
           <input type="hidden" name="country" value="US" />
-          <input type="submit" value="Submit" />
+          <input className={styles.submitButton} type="submit" value="Donate" />
         </form>
       </div>
     );

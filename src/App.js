@@ -7,7 +7,7 @@ import {
 
 // Pages
 import Blog from './pages/Blog';
-import DonatePage from './pages/DonatePage';
+import Donate from './pages/Donate';
 import Home from './pages/Home';
 import Participate from './pages/Participate';
 
@@ -23,7 +23,7 @@ const App = () => (
         <Header />
         <Route exact path="/" component={Home} />
         <Route path="/participate" component={Participate} />
-        <Route path="/donate" component={DonatePage} />
+        <Route path="/donate" component={Donate} />
         <Route path="/blog" component={Blog} />
       </div>
     </Router>
