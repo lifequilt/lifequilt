@@ -7,7 +7,7 @@ import DonateForm from './components/DonateForm';
 import SupportCard from './components/SupportCard';
 
 const amazonSmileImage = require('../../assets/amazon-smile.png');
-const backpackImage = require('../../assets/backpack-pic.jpg');
+const matchingImage = require('../../assets/matching-gifts.jpeg');
 const raceImage = require('../../assets/race-pic.JPG');
 
 class Donate extends Component {
@@ -26,7 +26,8 @@ class Donate extends Component {
         <Section className={styles.donateText}>
           <h2>Give the Gift of Educational Success</h2>
           <p>Helping young people go to and succeed in school is Life Quilt’s number one priority.</p>
-          <p>Your donation will go directly toward sending the next generation of leaders to school by providing them the support and tools they need to succeed in their studies.</p><p>Please support our students by donating today.</p>
+          <p>Your donation will go directly toward sending the next generation of leaders to school by providing them the support and tools they need to succeed in their studies.</p>
+          <p>Please donate to our programs today because learning can't wait.</p>
         </Section>
         <Section>
           <DonateForm />
@@ -38,9 +39,9 @@ class Donate extends Component {
           </div>
           <div className={styles.supportCardContainer}>
             <SupportCard
-              supportImage={backpackImage}
-              supportTitle="Matching Gift"
-              supportDescription="Many organizations support a matching gifts program that enables their employees to double or triple their gifts to Life Quilt Foundation. Your gift to Life Quilt Foundation can be matched by an equal or larger gift from your company. It is a real win-win for you, your employer and the students served by Life Quilt. To help Life Quilt Foundation receive a match to your gift, contact your Human Resources office to get your matching gift form or to learn if your company provides online requests. Help us help our students in need."
+              supportImage={matchingImage}
+              supportTitle="Matching Gifts"
+              supportDescription="Many organizations support a matching gifts program that enables their employees to double their gifts to Life Quilt Foundation. To help Life Quilt receive a match to your gift, contact your Human Resources office to get your matching gift form or learn if your company provides online requests. Help us help our students in need."
             />
             <SupportCard
               supportImage={amazonSmileImage}
@@ -52,7 +53,7 @@ class Donate extends Component {
             <SupportCard
               supportImage={raceImage}
               supportTitle="Volunteer"
-              supportDescription="Delivering school supplies to children at the Loretto Hospital Foundation’s Visit With Santa, serving a holiday meal to over 200 hungry residents of Ford Heights IL, are two ways our volunteers have served the community. Expect to be challenged and inspired."
+              supportDescription="Raising money to end hunger in Chicagoland in partnership with the Greater Chicago Food Depository and providing school supplies to hundreds of children as part of the Loretto Hospital Foundation Visit with Santa are two examples of how Life Quilt volunteers have partnered with others organizations to postively impact our neighborhoods."
             >
               <Link to="/participate/volunteer" className={styles.cardButton}>FIND OUT HOW</Link>
             </SupportCard>

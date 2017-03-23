@@ -225,6 +225,7 @@ export class DonateForm extends Component {
           <input className={styles.submitButton} type="submit" value="Donate" />
           <Link to="/policies" className={styles.privacyPolicy}>Privacy Policy</Link>
           <Link to="/policies" className={styles.billOfRights}>Donor Bill of Rights</Link>
+          <p className={styles.disclaimer}>No goods or services are provided in exchange for your contribution.  Tax Exempt #27-3621437</p>
         </form>
       </div>
     );

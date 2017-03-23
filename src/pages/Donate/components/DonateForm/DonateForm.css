@@ -145,6 +145,10 @@
   font-size: .7rem;
 }
 
+.disclaimer {
+  font-size: .6rem;
+}
+
 .errorsContainer {
   color: red;
   display: flex;
