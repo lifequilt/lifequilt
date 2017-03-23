@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  background-color: #F48F0D;
+  background-color: #ECEDEF;
   justify-content: center;
 }
 
@@ -20,6 +20,7 @@
 
 .header {
   font-size: 24px;
-  border-bottom: 1px solid #2E5077;
+  border-bottom: 1px solid #EF632F;
   margin-bottom: 20px;
+  color: #2E5077;
 }
