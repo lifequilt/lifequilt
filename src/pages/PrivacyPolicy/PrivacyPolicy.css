@@ -1,0 +1,9 @@
+.container {
+  text-align: left;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.container h2 {
+  border-bottom: 1px solid #2E5077;
+}

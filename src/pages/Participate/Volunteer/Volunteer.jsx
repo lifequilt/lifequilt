@@ -8,7 +8,7 @@ export class Volunteer extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.containerForm}>
-          <h2 className={styles.header}>Volunteer</h2>
+          <h2 className={styles.header}>Volunteer Form</h2>
           <UserForm
             userType="volunteer"
             history={this.props.history}

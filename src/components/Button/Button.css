@@ -38,7 +38,7 @@
   background-color: rgb(155, 161, 167);
   &:hover,
   &:active {
-    background-color: $orange;
+    background-color: #EF632F;
   }
 }
 

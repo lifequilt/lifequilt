@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const styles = require("./PrivacyPolicy.css");
+const styles = require('./PrivacyPolicy.css');
 
 const PrivacyPolicy = () => (
   <div className={styles.container}>

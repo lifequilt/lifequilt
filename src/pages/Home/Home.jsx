@@ -15,7 +15,7 @@ const Home = () => (
     <img className={styles.homepageBanner} src={homepageBanner} alt="Banner" />
     <div className={styles.main}>
       <Section>
-        <img src={parentImage} alt="Parent reading to child" />
+        <img src={rocketImage} alt="Parent reading to child" />
         <p>
           Life Quilt is committed to breaking the barriers to education caused by poverty and lack of funds.
         </p>
@@ -27,7 +27,7 @@ const Home = () => (
         </p>
       </Section>
       <Section>
-        <img src={rocketImage} alt="School supplies" />
+        <img src={parentImage} alt="School supplies" />
         <p>
           We believe that parents and guardians are a child’s first teacher and Life Quilt works to provide resources they need to nurture the child’s successful academic career.
         </p>

@@ -11,6 +11,7 @@ const FIELDS_ARRAY = [
   { stateKey: 'email', title: 'Email' },
   { stateKey: 'phoneNumber', title: 'Phone Number' },
 ];
+const styles = require('./user/user-form.css');
 
 export class UserForm extends Component {
   constructor(props) {
@@ -60,7 +61,7 @@ export class UserForm extends Component {
               title={field.title}
             />
           )}
-          <input type="submit" value="Submit" />
+          <input className={styles.submitButton} type="submit" value="Submit" />
         </form>
       </div>
     );

@@ -3,11 +3,16 @@
   flex-direction: column;
   align-items: center;
   color: rgb(60, 63, 70);
-  background-color: #FF9F1C;
+  background-color: #ECEDEF;
 }
 
 .donateText {
-  width: 60%;
+  text-align: left;
+  width: 60vw;
+}
+
+.donateText h2 {
+  color: #EF632F;
 }
 
 .supportContainer {
@@ -20,11 +25,11 @@
 }
 
 .supportCardContainer {
-  margin: 16px 16px 0px 16px;
   padding: 16px;
   width: 90vw;
   display: flex;
   justify-content: space-around;
+  position: relative;
 }
 
 .amazonSmile {
@@ -64,10 +69,10 @@
   user-select: none;
   white-space: normal;
   color: #fff;
-  background-color: $orangeDark;
+  background-color: #EF632F;
   &:hover,
   &:active {
-    background-color: $orangeLight;
+    background-color: #F48F0D;
   }
 }
 
@@ -77,6 +82,7 @@
   margin: 5px;
   padding: 10px;
   color: #fff;
-  margin: auto;
-  background-color: $orangeDark;
+  background-color: #EF632F;
+  position: absolute;
+  bottom: 30px;
 }
