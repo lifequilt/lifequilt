@@ -54,7 +54,7 @@ class Donate extends Component {
               supportTitle="Volunteer"
               supportDescription="Delivering school supplies to children at the Loretto Hospital Foundation’s Visit With Santa, serving a holiday meal to over 200 hungry residents of Ford Heights IL, are two ways our volunteers have served the community. Expect to be challenged and inspired."
             >
-              <Link to="/volunteer" className={styles.cardButton}>FIND OUT HOW</Link>
+              <Link to="/participate/volunteer" className={styles.cardButton}>FIND OUT HOW</Link>
             </SupportCard>
           </div>
         </div>

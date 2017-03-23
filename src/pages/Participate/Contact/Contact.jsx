@@ -7,11 +7,13 @@ export class Contact extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <h2>Contact</h2>
-        <UserForm
-          userType="contact"
-          history={this.props.history}
-        />
+        <div className={styles.form}>
+          <h2 className={styles.header}>Contact Form</h2>
+          <UserForm
+            userType="contact"
+            history={this.props.history}
+          />
+        </div>
       </div>
     );
   }

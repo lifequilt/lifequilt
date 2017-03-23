@@ -31,7 +31,7 @@ const Participate = () => (
         <Link to="/participate/contact">
           <img src={contactImage} alt="pic" />
           <div className={styles.button}>
-            HAVE A QUESTION?
+            CONTACT US
           </div>
         </Link>
       </Section>
