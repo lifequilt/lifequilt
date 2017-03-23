@@ -20,7 +20,7 @@ export class Volunteer extends Component {
           <p>Life Quilt is looking for guest bloggers who can share their experiences through short blog posts that help educate parents on steps they can take to reinforce their child’s academic success.</p>
 
           <h2 className={styles.header}>Individual and Personal Group Volunteers</h2>
-          <p>From participating in the annual Greater Chicago Food Depository Hunger Walk to helping children find their voice at the Phoenix, Illinois Family Reading Night, Life Quilt volunteers have the priviledge of serving in the community in a number of ways. </p>
+          <p>From helping children find their literary voice at the Phoenix Illinois Family Reading Night, to feeding the homeless in Ford Heights and providing winter clothing for children in Chicago, Life Quilt volunteers have served the community in a number of ways.</p>
 
           <h2 className={styles.header}>Corporate Volunteerism</h2>
           <p>Corporations rely on team building to strengthen relationships and to improve productivity.  Corporate volunteerism embraces these tenets while also helping our communities thrive.</p>

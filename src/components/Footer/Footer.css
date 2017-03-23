@@ -21,3 +21,8 @@
   width: 150px;
   height: 40px;
 }
+
+.address p {
+  margin: 0;
+  font-size: .7rem;
+}

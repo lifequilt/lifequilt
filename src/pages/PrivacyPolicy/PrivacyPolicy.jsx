@@ -17,7 +17,7 @@ const PrivacyPolicy = () => (
     In addition, donor information – which includes address, phone, and email –collected through offline channels by Life Quilt Foundation is not shared, rented or sold to any other organizations. Donor information provided to Life Quilt will only be used by the Life Quilt for purposes of furthering our mission.
     </p>
 
-    <h3>Credit Card information</h3>
+    <h3>Credit Card Information</h3>
 
     <p>
     Life Quilt Foundation has contracted the services of a banking partner to process credit card and debit card donations submitted online. Our banking partner’s secured server encrypts your credit card information so that it may be safely transmitted over the Web. Your credit card information will not be released to any other party by Life Quilt Foundation or our banking partner.
@@ -26,7 +26,7 @@ const PrivacyPolicy = () => (
     <h3>External Links</h3>
 
     <p>
-    In order to provide a more comprehensive and useful site, this website contains links to other external websites. Northern Illinois Food Bank is not responsible for the privacy practices of those sites.
+    In order to provide a more comprehensive and useful site, this website contains links to other external websites. Life Quilt Foundation is not responsible for the privacy practices of those sites.
     </p>
 
     <h2>The Donor Bill of Rights</h2>

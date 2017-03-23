@@ -1,20 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export class ThankYou extends Component {
-  render() {
-    const { userType } = this.props.location.state;
-    return (
-      <div>
-        {userType === 'contact' ?
-          <div>Thank you for your interest! We will get back to you shortly!</div> :
-          <div>
-            <h2>Thank you for signing up to {userType} with us!</h2>
-            <p>We will get back to you shortly!</p>
-          </div>
-        }
-      </div>
-    );
-  }
-}
+const styles = require('./ThankYou.css');
+
+const ThankYou = () => (
+  <div className={styles.container}>
+    <h2>Thank you for your interest!</h2>
+    <p>We'll get back to you soon.</p>
+  </div>
+);
 
 export default ThankYou;
