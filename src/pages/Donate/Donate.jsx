@@ -27,7 +27,7 @@ class Donate extends Component {
           <h2>Give the Gift of Educational Success</h2>
           <p>Helping young people go to and succeed in school is Life Quilt’s number one priority.</p>
           <p>Your donation will go directly toward sending the next generation of leaders to school by providing them the support and tools they need to succeed in their studies.</p>
-          <p>Please donate to our programs today because learning can't wait.</p>
+          <p>Please donate to our programs today because learning can&apos;t wait.</p>
         </Section>
         <Section>
           <DonateForm />

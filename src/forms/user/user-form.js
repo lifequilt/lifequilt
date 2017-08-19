@@ -34,11 +34,14 @@ export class UserForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    const {
+      history,
+    } = this.props;
+
     const refName = '/users';
-    const onFulfilled = snapshot => {
-      console.log(snapshot.key);
-      return snapshot.key;
-    };
+
+    const onFulfilled = snapshot => snapshot.key;
+
     const onRejected = error => console.log('Errors: ', error);
 
     const userObject = Object.assign(this.state, {'userType': this.props.userType});
@@ -47,8 +50,9 @@ export class UserForm extends Component {
       .then(onFulfilled)
       .catch(onRejected);
 
-    this.props.history.push('../thankyou', {});
+    history.push('../thankyou', {});
   }
+
   render() {
     return (
       <div>

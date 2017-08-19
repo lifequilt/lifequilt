@@ -1,6 +1,11 @@
-.adminButton {
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
 }
 
-.container {
-  background-color: gray;
+.downloadButton {
+  margin-top: 16px;
 }
