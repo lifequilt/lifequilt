@@ -79,9 +79,15 @@ class AdminLoginLink extends Component {
 
     const csvData = Object.values(users);
 
+    const csvLinkProps = {
+      filename: 'lifequiltinfo.csv',
+      data: csvData,
+      className: styles.csvLink,
+    };
+
     const downloadButton = authorized ? (
       <Button {...downloadPeopleProps}>
-        <CSVLink filename="lifequiltinfo.csv" data={csvData} >Download me</CSVLink>
+        <CSVLink {...csvLinkProps} >Download CSV</CSVLink>
       </Button>
     ) : null;
 

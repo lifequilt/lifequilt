@@ -10,6 +10,8 @@ const FIELDS_ARRAY = [
   { stateKey: 'lastName', title: 'Last Name' },
   { stateKey: 'email', title: 'Email' },
   { stateKey: 'phoneNumber', title: 'Phone Number' },
+  { stateKey: 'organizationName', title: 'Organization Name' },
+  { stateKey: 'comment', title: 'Comment', type: 'textarea'},
 ];
 const styles = require('./user/user-form.css');
 
@@ -21,6 +23,8 @@ export class UserForm extends Component {
       lastName: '',
       phoneNumber: '',
       email: '',
+      organizationName: '',
+      comment: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -62,6 +66,7 @@ export class UserForm extends Component {
               onChange={this.onChange}
               value={this.state[field.stateKey]}
               title={field.title}
+              textarea={field.type === 'textarea'}
             />
           )}
           <input className={styles.submitButton} type="submit" value="Submit" />
