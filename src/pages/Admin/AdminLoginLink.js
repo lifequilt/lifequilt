@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
+import { CSVLink, CSVDownload } from 'react-csv';
+
+import getDatabase from '../../api/apiDatabase/getDatabase';
 
 import Button from '../../components/Button';
 import SingleInput from '../../forms/single-input';
@@ -17,10 +20,18 @@ class AdminLoginLink extends Component {
     this.state = {
       error: {},
       authorized: false,
-      accessToken: '',
       email: '',
       password: '',
+      users: {},
+      user: null,
     };
+  }
+
+  componentWillMount() {
+    firebase.auth().signOut();
+    firebase.auth().onAuthStateChanged(user => {
+      this.setState({ user, authorized: !!user });
+    });
   }
 
   onChange = (key, event) => {
@@ -39,16 +50,20 @@ class AdminLoginLink extends Component {
 
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(() => {
-        this.setState({
-          authorized: true,
+        getDatabase('/users').on('value', snapshot => {
+          this.setState({ users: snapshot.val(), authorized: true });
         });
       })
-      .catch(error => this.setState({ error, authorized: false }));
+      .catch(error => {
+        console.log(error);
+        this.setState({ error, authorized: false });
+      });
   }
 
   render() {
     const {
       authorized,
+      users,
     } = this.state;
 
     const adminButtonProps = {
@@ -62,12 +77,12 @@ class AdminLoginLink extends Component {
       className: styles.downloadButton,
     };
 
+    const csvData = Object.values(users);
+
     const downloadButton = authorized ? (
-      <a href={'https://lifequilt-46fd7.firebaseio.com/users.json?download=myfilename.csv&print=pretty'} download >
-        <Button {...downloadPeopleProps}>
-          Download Stuff
-        </Button>
-      </a>
+      <Button {...downloadPeopleProps}>
+        <CSVLink filename="lifequiltinfo.csv" data={csvData} >Download me</CSVLink>
+      </Button>
     ) : null;
 
     return (

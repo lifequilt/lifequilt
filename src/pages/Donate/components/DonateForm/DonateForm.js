@@ -130,11 +130,20 @@ export class DonateForm extends Component {
     const {
       donateAmount,
       customDonateAmount,
+      userType,
+      firstName,
+      lastName,
+      phoneNumber,
+      email,
     } = this.state;
     const newDonateAmount = donateAmount === '' ? customDonateAmount : donateAmount;
 
     const jsonObject = {
-      ...this.state,
+      userType,
+      firstName,
+      lastName,
+      phoneNumber,
+      email,
       donateAmount: newDonateAmount,
     };
 
