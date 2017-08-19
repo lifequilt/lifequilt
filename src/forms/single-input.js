@@ -2,12 +2,22 @@ import React, { PropTypes } from 'react';
 
 const styles = require('./forms.css');
 
-const SingleInput = props => (
-  <div className={styles.singleInput}>
-    <label htmlFor={props.title}>{props.title}{props.required ? ' *' : null}</label>
-    <input type={props.type} value={props.value} placeholder={props.title} onChange={e => props.onChange(props.stateKey, e)} />
-  </div>
-);
+const SingleInput = props => {
+  if (props.textarea) {
+    return (
+      <div className={styles.textInput}>
+        <label htmlFor={props.title}>{props.title}{props.required ? ' *' : null}</label>
+        <textarea rows="4" type={props.type} value={props.value} placeholder={props.title} onChange={e => props.onChange(props.stateKey, e)} />
+      </div>
+    );
+  }
+  return (
+    <div className={styles.singleInput}>
+      <label htmlFor={props.title}>{props.title}{props.required ? ' *' : null}</label>
+      <input type={props.type} value={props.value} placeholder={props.title} onChange={e => props.onChange(props.stateKey, e)} />
+    </div>
+  );
+};
 
 SingleInput.propTypes = {
   stateKey: PropTypes.string.isRequired,

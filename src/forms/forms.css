@@ -1,6 +1,16 @@
 .singleInput input {
   margin: 7px;
   margin-left: 0;
-  padding: 10px 3px;
+  padding: 10px 5px;
   width: 100%;
+}
+
+.textInput {
+  display: flex;
+  flex-direction: column;
+  > textarea {
+    margin: 7px;
+    margin-left: 0;
+    padding: 10px 5px;
+  }
 }
