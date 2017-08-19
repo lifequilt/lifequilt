@@ -17,6 +17,7 @@
 
 .navItemActive {
   flex: 1;
+  padding: 5px;
   margin: 10px;
   color: #EF632F;
   font-weight: 700;

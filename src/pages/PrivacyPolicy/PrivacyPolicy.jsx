@@ -36,15 +36,15 @@ const PrivacyPolicy = () => (
     </p>
 
     <p>
-    I. To be informed of the organization's mission, of the way the organization intends to use donated resources, and of its capacity to use donations effectively for their intended purposes.
+    I. To be informed of the organization&apos;s mission, of the way the organization intends to use donated resources, and of its capacity to use donations effectively for their intended purposes.
     </p>
 
     <p>
-    II. To be informed of the identity of those serving on the organization's governing board, and to expect the board to exercise prudent judgment in its stewardship responsibilities.
+    II. To be informed of the identity of those serving on the organization&apos;s governing board, and to expect the board to exercise prudent judgment in its stewardship responsibilities.
     </p>
 
     <p>
-    III. To have access to the organization's most recent financial statements.
+    III. To have access to the organization&apos;s most recent financial statements.
     </p>
 
     <p>

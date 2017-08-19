@@ -5,7 +5,7 @@ const styles = require('./forms.css');
 const SingleInput = props => (
   <div className={styles.singleInput}>
     <label htmlFor={props.title}>{props.title}{props.required ? ' *' : null}</label>
-    <input value={props.value} placeholder={props.title} onChange={e => props.onChange(props.stateKey, e)} />
+    <input type={props.type} value={props.value} placeholder={props.title} onChange={e => props.onChange(props.stateKey, e)} />
   </div>
 );
 
@@ -15,6 +15,7 @@ SingleInput.propTypes = {
   title: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   required: PropTypes.bool,
+  type: PropTypes.string,
 };
 
 export default SingleInput;

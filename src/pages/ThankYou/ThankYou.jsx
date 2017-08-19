@@ -5,7 +5,7 @@ const styles = require('./ThankYou.css');
 const ThankYou = () => (
   <div className={styles.container}>
     <h2>Thank you for your interest!</h2>
-    <p>We'll get back to you soon.</p>
+    <p>We&apos;ll get back to you soon.</p>
   </div>
 );
 
