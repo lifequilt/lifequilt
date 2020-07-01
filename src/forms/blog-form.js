@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SingleInput from './single-input';
-import SingleTextarea from './single-textarea';
-import { postDatabase } from '../api/apiDatabase';
+import { postDatabase } from '../api/apiDatabase/postDatabase';
+import RichTextEditor from 'react-rte';
 
 const FIELDS_ARRAY = [
   { stateKey: 'title', title: 'Title' },
@@ -12,16 +12,17 @@ export class BlogForm extends Component {
     super(props);
     this.state = {
       title: '',
-      content: '',
+      content: RichTextEditor.createEmptyValue(),
       createdAt: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
   onChange(key, event) {
     const newState = {};
     newState[key] = event.target.value;
-    newState['createdAt'] = (new Date()).toString()
+    newState.createdAt = (new Date()).toString();
     this.setState(newState);
   }
   handleSubmit(e) {
@@ -33,12 +34,25 @@ export class BlogForm extends Component {
     };
     const onRejected = error => console.log('Errors: ', error);
 
+    const content = this.state.content.toString('html');
 
-    postDatabase({ jsonObject: this.state, refName })
+    postDatabase({ jsonObject: {
+      title: this.state.title,
+      createdAt: this.state.createdAt,
+      content: content,
+    }, refName })
       .then(onFulfilled)
       .catch(onRejected);
   }
+
+  handleChange(content) {
+    let newContent = content.toString('html');
+    this.setState({content});
+    // console.log(newContent);
+  }
+
   render() {
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -52,12 +66,9 @@ export class BlogForm extends Component {
             />
           )}
 
-          <SingleTextarea 
-          	key='content'
-	        stateKey='content'
-	        onChange={this.onChange}
-	        value={this.state.content}
-	        title="Content"
+          <RichTextEditor
+            value={this.state.content}
+            onChange={this.handleChange}
           />
           <input type="submit" value="Submit" />
         </form>
